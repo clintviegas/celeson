@@ -1,0 +1,50 @@
+---
+interface Props {
+  region: 'uae' | 'india';
+}
+const { region } = Astro.props;
+---
+
+<footer class="bg-[#060e18] border-t border-white/10">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-600 text-white font-bold text-sm leading-none">
+            360°
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white">Celeson</div>
+            <div class="text-xs text-slate-500">Safety & Facility Solutions</div>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 max-w-xs">
+          Empowering Safer Operations & Communities.
+        </p>
+      </div>
+
+      <!-- Region -->
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-slate-500">Serving:</span>
+        <div class="flex gap-2">
+          <a href="/" class={`rounded-full px-3 py-1 text-xs font-medium border transition-all ${region === 'uae' ? 'border-teal-500 text-teal-400' : 'border-white/10 text-slate-500 hover:border-white/30 hover:text-slate-300'}`}>
+            UAE
+          </a>
+          <a href="/india" class={`rounded-full px-3 py-1 text-xs font-medium border transition-all ${region === 'india' ? 'border-teal-500 text-teal-400' : 'border-white/10 text-slate-500 hover:border-white/30 hover:text-slate-300'}`}>
+            India
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-600">
+        &copy; {new Date().getFullYear()} 360° Safety & Facility Solutions. All rights reserved.
+      </p>
+      <p class="text-xs text-slate-600">
+        arundhan.alphones@celesongroup.com
+      </p>
+    </div>
+  </div>
+</footer>

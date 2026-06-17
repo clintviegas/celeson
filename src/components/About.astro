@@ -1,0 +1,95 @@
+---
+interface Props {
+  region: 'uae' | 'india';
+}
+const { region } = Astro.props;
+
+const leadershipText = region === 'uae'
+  ? "As a seasoned professional with executive experience in multinational oil & gas and logistics organizations across the UAE, I understand that safety is not just a regulatory requirement — it is a cornerstone of operational excellence. I bring a disciplined, hands-on approach to solving complex safety challenges, ensuring your operations remain resilient, compliant, and deeply secure."
+  : "As a seasoned professional with executive experience in multinational oil & gas and logistics organisations across the UAE and India, I understand that safety is not just a regulatory requirement — it is a cornerstone of operational excellence. I bring a disciplined, hands-on approach to solving complex safety challenges, ensuring your operations remain resilient, compliant, and deeply secure.";
+
+const pillars = [
+  { label: '30+ Years', desc: 'of leadership in safety & logistics' },
+  { label: 'Multinational', desc: region === 'uae' ? 'UAE & Gulf experience' : 'UAE & India experience' },
+  { label: 'Prevention-First', desc: 'eliminate risk before it strikes' },
+  { label: 'Quick Resolutions', desc: 'fast, decisive, effective action' },
+];
+---
+
+<section id="about" class="py-16 md:py-24 bg-[#0b1929] relative overflow-hidden">
+  <!-- Subtle pattern -->
+  <div class="absolute inset-0 opacity-[0.03]">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </svg>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <!-- Left: text -->
+      <div>
+        <p class="text-sm font-semibold text-teal-400 uppercase tracking-widest mb-3">Leadership Expertise</p>
+        <h2 class="text-4xl font-extrabold text-white tracking-tight mb-6">
+          A Trusted Partner for<br />Forward-Thinking Organisations
+        </h2>
+
+        <!-- Quote block -->
+        <blockquote class="border-l-2 border-teal-500 pl-6 mb-8">
+          <p class="text-slate-300 leading-relaxed text-lg">
+            {leadershipText}
+          </p>
+        </blockquote>
+
+        <!-- Pillars grid -->
+        <div class="grid grid-cols-2 gap-4">
+          {pillars.map(p => (
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div class="text-lg font-bold text-teal-400 mb-1">{p.label}</div>
+              <div class="text-sm text-slate-400">{p.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: visual -->
+      <div class="relative">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-8">
+          <div class="text-center mb-8">
+            <div class="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-teal-600/20 border border-teal-500/30 mb-4">
+              <svg class="h-10 w-10 text-teal-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">Why Celeson?</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { title: 'Practical Execution', desc: 'Real-world solutions, not just reports and recommendations.' },
+              { title: 'Ethical Foundations', desc: 'Safety programmes built on transparency and integrity.' },
+              { title: 'Structured Systems', desc: 'Scalable frameworks that grow with your organisation.' },
+              { title: 'Hands-on Approach', desc: 'We work alongside your teams, not above them.' },
+            ].map(item => (
+              <div class="flex gap-4 items-start">
+                <div class="flex-shrink-0 h-8 w-8 rounded-full bg-teal-600/20 flex items-center justify-center">
+                  <svg class="h-4 w-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-white">{item.title}</div>
+                  <div class="text-sm text-slate-400">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Discovery Call',
+    desc: 'We start by understanding your operations — your industry, scale, current safety gaps, and compliance requirements.',
+  },
+  {
+    num: '02',
+    title: 'Risk Assessment',
+    desc: 'Our experts conduct an in-depth on-site or remote assessment, mapping every hazard, compliance gap, and operational risk.',
+  },
+  {
+    num: '03',
+    title: 'Custom Programme',
+    desc: 'We design a tailored safety programme — policies, procedures, training plans, and technology integrations specific to your context.',
+  },
+  {
+    num: '04',
+    title: 'Implementation & Support',
+    desc: 'We work alongside your teams to roll out the programme, train staff, and provide ongoing monitoring and rapid-response support.',
+  },
+];
+---
+
+<section id="process" class="py-16 md:py-24 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="mb-10 md:mb-14 reveal-up">
+      <p class="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-2">Our Approach</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+        How We Work
+      </h2>
+    </div>
+
+    <!-- Steps grid: 2-col on mobile, 4-col on desktop -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 rounded-2xl overflow-hidden border border-slate-100">
+      {steps.map((step, i) => (
+        <div class="reveal-up bg-white p-6 md:p-8 group hover:bg-teal-50 transition-colors duration-200" style={`transition-delay: ${i * 80}ms`}>
+          <!-- Number badge -->
+          <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal-600/10 text-teal-600 text-sm font-extrabold mb-5 group-hover:bg-teal-600 group-hover:text-white transition-all duration-200">
+            {step.num}
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">{step.title}</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA strip -->
+    <div class="mt-6 md:mt-8 rounded-2xl bg-slate-50 border border-slate-100 p-5 md:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal-up">
+      <div>
+        <p class="font-bold text-slate-900 text-sm md:text-base">Ready to get started?</p>
+        <p class="text-slate-500 text-xs md:text-sm">Free initial consultation — no obligation.</p>
+      </div>
+      <a href="#contact" class="tap-scale w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-500 transition-all">
+        Book a Discovery Call
+        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

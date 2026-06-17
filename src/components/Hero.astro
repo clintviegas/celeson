@@ -1,0 +1,121 @@
+---
+interface Props {
+  region: 'uae' | 'india';
+}
+const { region } = Astro.props;
+
+const headline = region === 'uae'
+  ? 'Safety That Moves With Your Business'
+  : 'Supply Chain Safety That Never Stops Working';
+
+const subline = region === 'uae'
+  ? 'Fleet operations, school transport, corporate facilities — we build safety frameworks for organizations across the UAE that eliminate risk before it becomes a crisis.'
+  : 'End-to-end safety solutions for logistics, transport, schools, and homes across India — practical, ethical, and built around your operations.';
+
+const whatsappHref = region === 'uae'
+  ? 'https://wa.me/971503259935?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20your%20safety%20services'
+  : 'https://wa.me/919076217999?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20your%20safety%20services';
+---
+
+<section class="relative bg-[#0b1929] overflow-hidden">
+  <!-- Grid pattern -->
+  <div class="absolute inset-0 opacity-[0.04]" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+  <!-- Glow -->
+  <div class="absolute top-0 left-1/4 w-[700px] h-[700px] rounded-full bg-teal-700/15 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-blue-700/8 blur-[90px] pointer-events-none" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-16 sm:pb-20">
+    <div class="max-w-3xl hero-fade">
+      <!-- Badge -->
+      <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3.5 py-1.5">
+        <span class="h-1.5 w-1.5 rounded-full bg-teal-400 animate-pulse" aria-hidden="true"></span>
+        <span class="text-[11px] sm:text-xs font-medium text-teal-400 tracking-widest uppercase">
+          360° Safety & Facility Solutions &mdash; {region === 'uae' ? 'UAE' : 'India'}
+        </span>
+      </div>
+
+      <!-- H1 -->
+      <h1 class="text-[2.6rem] sm:text-5xl lg:text-[4.25rem] font-extrabold text-white leading-[1.08] tracking-tight mb-5">
+        {headline}
+      </h1>
+
+      <!-- Subline -->
+      <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl mb-8 sm:mb-10">
+        {subline}
+      </p>
+
+      <!-- Trust bar -->
+      <div class="flex flex-wrap gap-x-5 gap-y-2 mb-9 sm:mb-11">
+        {['30+ Years Experience', 'Prevention-First', 'Tailored Solutions', 'Rapid Response'].map(t => (
+          <div class="flex items-center gap-1.5 text-sm text-slate-400">
+            <svg class="h-3.5 w-3.5 text-teal-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            {t}
+          </div>
+        ))}
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href="#contact"
+          class="tap-scale inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-3.5 text-sm font-semibold text-white hover:bg-teal-500 transition-all hover:shadow-xl hover:shadow-teal-600/25"
+        >
+          Secure Your Operations
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tap-scale inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+        >
+          <svg class="h-4 w-4 text-green-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="relative border-t border-white/8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4">
+        {[
+          { number: '30+', label: 'Years of Experience' },
+          { number: '360°', label: 'End-to-End Coverage' },
+          { number: '5+', label: 'Service Verticals' },
+          { number: '100%', label: 'Customised Solutions' },
+        ].map((stat, i) => (
+          <div class={`py-5 px-5 sm:px-6 ${i !== 3 ? 'border-r border-white/8' : ''}`}>
+            <div class="text-2xl sm:text-3xl font-extrabold text-teal-400">{stat.number}</div>
+            <div class="text-xs sm:text-sm text-slate-500 mt-0.5">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes heroFade {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-fade { animation: heroFade 0.65s ease forwards; }
+</style>

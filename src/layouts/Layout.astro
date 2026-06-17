@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  region?: 'uae' | 'india';
+  canonicalURL?: string;
+}
+
+const { title, description, region = 'uae', canonicalURL } = Astro.props;
+const siteURL = 'https://celesongroup.com';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL ?? siteURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL ?? siteURL} />
+    <meta property="og:site_name" content="Celeson | 360° Safety & Facility Solutions" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Celeson | 360° Safety & Facility Solutions",
+      "description": description,
+      "url": siteURL,
+      "areaServed": region === 'uae' ? "United Arab Emirates" : "India",
+      "knowsAbout": ["Safety Consulting", "Logistics Safety", "Fleet Management", "HSE", "Facility Safety"],
+      "founder": { "@type": "Person", "name": "Arundhan Alphones" }
+    })} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-white font-sans text-slate-800">
+    <slot />
+
+    <!-- Scroll-reveal: runs after full DOM is painted -->
+    <script is:inline>
+      (function () {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        function observe() {
+          document.querySelectorAll('.reveal-up').forEach(function (el) {
+            io.observe(el);
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', observe);
+        } else {
+          observe();
+        }
+      })();
+    </script>
+  </body>
+</html>
