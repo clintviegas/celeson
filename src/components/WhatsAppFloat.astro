@@ -1,12 +1,13 @@
 ---
+import { contact } from '../data/content';
+
 interface Props {
   region: 'uae' | 'india';
 }
 const { region } = Astro.props;
 
-const href = region === 'uae'
-  ? 'https://wa.me/971503259935?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20your%20safety%20services'
-  : 'https://wa.me/919076217999?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20your%20safety%20services';
+const regionContact = region === 'uae' ? contact.uae : contact.india;
+const href = `https://wa.me/${regionContact.whatsapp}?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Celeson%20services`;
 ---
 
 <a

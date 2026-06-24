@@ -1,0 +1,77 @@
+---
+interface Props {
+  href?: string;
+  size?: 'sm' | 'md' | 'lg';
+  showText?: boolean;
+  subtitle?: string;
+  subtitleHref?: string;
+  class?: string;
+  idSuffix?: string;
+}
+const { href, size = 'md', showText = true, subtitle, subtitleHref, class: className = '', idSuffix = 'logo' } = Astro.props;
+
+const iconSizes = { sm: 36, md: 40, lg: 48 };
+const iconPx = iconSizes[size];
+const gradId = `brandGrad-${idSuffix}`;
+const splitLinks = Boolean(href && subtitleHref);
+---
+
+{splitLinks ? (
+  <div class={`inline-flex items-center gap-3 flex-shrink-0 min-w-0 ${className}`}>
+    <a href={href} class="group flex-shrink-0" aria-label="Celeson Enterprise Pvt Ltd — choose region">
+      <svg width={iconPx} height={iconPx} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 drop-shadow-sm group-hover:scale-[1.02] transition-transform duration-300" aria-hidden="true">
+        <defs><linearGradient id={gradId} x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs>
+        <rect width="40" height="40" rx="10" fill={`url(#${gradId})`}/>
+        <circle cx="20" cy="20" r="12" stroke="white" stroke-width="2.25" stroke-dasharray="65 8" stroke-linecap="round" opacity="0.92"/>
+        <path d="M20 12v7.5l5 2.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="20" r="2" fill="white"/>
+      </svg>
+    </a>
+    {showText && (
+      <div class="leading-tight min-w-0">
+        <a href={href} class="block text-xs sm:text-sm md:text-[15px] font-bold text-white hover:text-teal-300 transition-colors tracking-tight leading-snug truncate">
+          Celeson Enterprise Pvt Ltd
+        </a>
+        {subtitle && (
+          <a href={subtitleHref} class="block text-[10px] sm:text-[11px] text-slate-400 hover:text-teal-400 truncate transition-colors">
+            {subtitle}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+) : (
+  href ? (
+    <a href={href} class={`inline-flex items-center gap-3 group flex-shrink-0 ${className}`} aria-label={showText ? undefined : 'Celeson Enterprise Pvt Ltd'}>
+      <svg width={iconPx} height={iconPx} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 drop-shadow-sm group-hover:scale-[1.02] transition-transform duration-300" aria-hidden="true">
+        <defs><linearGradient id={gradId} x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs>
+        <rect width="40" height="40" rx="10" fill={`url(#${gradId})`}/>
+        <circle cx="20" cy="20" r="12" stroke="white" stroke-width="2.25" stroke-dasharray="65 8" stroke-linecap="round" opacity="0.92"/>
+        <path d="M20 12v7.5l5 2.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="20" r="2" fill="white"/>
+      </svg>
+      {showText && (
+        <div class="leading-tight min-w-0">
+          <div class="text-xs sm:text-sm md:text-[15px] font-bold text-white group-hover:text-teal-300 transition-colors tracking-tight leading-snug">Celeson Enterprise Pvt Ltd</div>
+          {subtitle && <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">{subtitle}</div>}
+        </div>
+      )}
+    </a>
+  ) : (
+    <div class={`inline-flex items-center gap-3 group flex-shrink-0 ${className}`}>
+      <svg width={iconPx} height={iconPx} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 drop-shadow-sm" aria-hidden="true">
+        <defs><linearGradient id={gradId} x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs>
+        <rect width="40" height="40" rx="10" fill={`url(#${gradId})`}/>
+        <circle cx="20" cy="20" r="12" stroke="white" stroke-width="2.25" stroke-dasharray="65 8" stroke-linecap="round" opacity="0.92"/>
+        <path d="M20 12v7.5l5 2.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="20" r="2" fill="white"/>
+      </svg>
+      {showText && (
+        <div class="leading-tight min-w-0">
+          <div class="text-xs sm:text-sm md:text-[15px] font-bold text-white tracking-tight leading-snug">Celeson Enterprise Pvt Ltd</div>
+          {subtitle && <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">{subtitle}</div>}
+        </div>
+      )}
+    </div>
+  )
+)}

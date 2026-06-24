@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RegionHeader from './RegionHeader.astro';
+import RegionFooter from './RegionFooter.astro';
+import SiteChrome from './SiteChrome.astro';
+import type { BusinessRegion } from '../data/brief';
+import { getRegionLabel } from '../data/regionNav';
+
+interface Props {
+  region: BusinessRegion;
+  current?: string;
+  title: string;
+  description: string;
+  canonicalURL: string;
+  article?: {
+    title: string;
+    description: string;
+    date: string;
+    image: string;
+    slug: string;
+  };
+}
+const { region, current = '', title, description, canonicalURL, article } = Astro.props;
+const regionLabel = getRegionLabel(region);
+---
+
+<Layout
+  title={title}
+  description={description}
+  region={region}
+  canonicalURL={canonicalURL}
+  article={article}
+>
+  <RegionHeader region={region} current={current} />
+  <main>
+    <slot />
+  </main>
+  <RegionFooter region={region} />
+  <SiteChrome region={region} />
+</Layout>

@@ -1,0 +1,27 @@
+---
+import RegionalLayout from '../../../components/RegionalLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import RegionalInsights from '../../../components/RegionalInsights.astro';
+import { getRegionLabel } from '../../../data/regionNav';
+
+const region = 'india' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/india/insights"
+  title={`Insights | Celeson ${regionLabel}`}
+  description={`Articles and case studies from Celeson India — driver management, road safety, warehouse HSE, Kori Café hospitality, and more.`}
+  canonicalURL="https://celesongroup.com/india/insights"
+>
+  <PageHero
+    title={`Insights — ${regionLabel}`}
+    subtitle="Articles & Guides"
+    breadcrumbs={[
+      { label: regionLabel, href: '/india' },
+      { label: 'Insights' },
+    ]}
+  />
+  <RegionalInsights region={region} />
+</RegionalLayout>

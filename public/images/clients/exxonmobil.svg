@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" role="img" aria-label="ExxonMobil">
+  <rect width="280" height="60" fill="#fff"/>
+  <text x="140" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="26">
+    <tspan fill="#E4002B">Exxon</tspan><tspan fill="#0066B2">Mobil</tspan>
+  </text>
+</svg>

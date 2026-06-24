@@ -1,0 +1,27 @@
+---
+import RegionalLayout from '../../../components/RegionalLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import RegionalInsights from '../../../components/RegionalInsights.astro';
+import { getRegionLabel } from '../../../data/regionNav';
+
+const region = 'uae' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/uae/insights"
+  title={`Insights | Celeson ${regionLabel}`}
+  description={`Articles, guides, and case studies from Celeson ${regionLabel} — fleet safety, HSE, marine operations, and logistics excellence.`}
+  canonicalURL="https://celesongroup.com/uae/insights"
+>
+  <PageHero
+    title={`Insights — ${regionLabel}`}
+    subtitle="Articles & Guides"
+    breadcrumbs={[
+      { label: regionLabel, href: '/uae' },
+      { label: 'Insights' },
+    ]}
+  />
+  <RegionalInsights region={region} />
+</RegionalLayout>

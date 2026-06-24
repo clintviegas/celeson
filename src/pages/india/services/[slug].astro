@@ -1,0 +1,41 @@
+---
+import { getServicesForRegion } from '../../../data/services';
+import RegionalLayout from '../../../components/RegionalLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ServiceDetail from '../../../components/ServiceDetail.astro';
+import { getRegionLabel } from '../../../data/regionNav';
+
+export function getStaticPaths() {
+  return getServicesForRegion('india').map((service) => ({
+    params: { slug: service.id },
+  }));
+}
+
+const region = 'india' as const;
+const { slug } = Astro.params;
+const regionLabel = getRegionLabel(region);
+const service = getServicesForRegion(region).find((s) => s.id === slug);
+
+if (!service) {
+  return Astro.redirect('/india/services');
+}
+---
+
+<RegionalLayout
+  region={region}
+  current="/india/services"
+  title={`${service.title} | Celeson ${regionLabel}`}
+  description={service.desc}
+  canonicalURL={`https://celesongroup.com/india/services/${service.id}`}
+>
+  <PageHero
+    title={service.title}
+    subtitle="Service"
+    breadcrumbs={[
+      { label: regionLabel, href: '/india' },
+      { label: 'Services', href: '/india/services' },
+      { label: service.title },
+    ]}
+  />
+  <ServiceDetail region={region} serviceId={service.id} />
+</RegionalLayout>

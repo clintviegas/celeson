@@ -1,36 +1,50 @@
 ---
+import { contact, tagline } from '../data/content';
+
 interface Props {
   region: 'uae' | 'india';
+  compact?: boolean;
 }
-const { region } = Astro.props;
+const { region, compact = false } = Astro.props;
 
-const phone1 = region === 'uae' ? '+971 56 505 8627' : '+91 90762 17999';
-const phone1Href = region === 'uae' ? 'tel:+971 56 505 8627' : 'tel:+919076217999';
-const phone2 = region === 'india' ? '+91 80971 75645' : null;
-const phone2Href = region === 'india' ? 'tel:+918097175645' : null;
-const email = 'arundhan.alphones@celesongroup.com';
-const whatsappNumber = region === 'uae' ? '+971 50 325 9935' : '+919076217999';
-const whatsappHref = region === 'uae'
-  ? 'https://wa.me/971503259935?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20your%20safety%20services'
-  : 'https://wa.me/919076217999?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20your%20safety%20services';
+const regionContact = region === 'uae' ? contact.uae : contact.india;
+const phone1 = regionContact.phone;
+const phone1Href = `tel:${regionContact.tel}`;
+const whatsappHref = `https://wa.me/${regionContact.whatsapp}?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Celeson%20services`;
+const whatsappDisplay = regionContact.phone;
 ---
 
 <section id="contact" class="py-16 md:py-24 bg-slate-50">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
+    {!compact && (
     <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
       <p class="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-2">Get In Touch</p>
       <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-        Secure Your Operations Today
+        Contact Celeson Group
       </h2>
       <p class="text-slate-500 text-base md:text-lg leading-relaxed">
-        Whether it's your workforce, transport fleet, corporate facility, or home — let's connect to design a tailor-made safety programme that sustains and protects.
+        {tagline} Reach us via WhatsApp, email, or phone — we respond promptly to every enquiry.
       </p>
     </div>
+    )}
 
     <div class="grid lg:grid-cols-2 gap-6 md:gap-12 items-start">
-      <!-- Contact info -->
       <div class="space-y-4">
+        <!-- Head Office -->
+        <div class="flex items-start gap-4 md:gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
+          <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mb-0.5">Head Office</div>
+            <div class="text-sm font-semibold text-slate-900 mb-1">{contact.headOffice.name}</div>
+            <div class="text-sm text-slate-500 leading-relaxed">{contact.headOffice.address}</div>
+          </div>
+        </div>
+
         <!-- Phone -->
         <a href={phone1Href} class="tap-scale group flex items-center gap-4 md:gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:p-6 hover:border-teal-300 hover:shadow-lg hover:shadow-teal-50 transition-all active:scale-[0.99]">
           <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-600 group-hover:bg-teal-100 transition-colors">
@@ -41,7 +55,6 @@ const whatsappHref = region === 'uae'
           <div>
             <div class="text-xs text-slate-400 uppercase tracking-wider mb-0.5">Phone {region === 'uae' ? '(UAE)' : '(India)'}</div>
             <div class="text-lg font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">{phone1}</div>
-            {phone2 && <div class="text-base text-slate-500">{phone2}</div>}
           </div>
         </a>
 
@@ -54,13 +67,13 @@ const whatsappHref = region === 'uae'
           </div>
           <div>
             <div class="text-xs text-slate-400 uppercase tracking-wider mb-0.5">WhatsApp</div>
-            <div class="text-lg font-semibold text-slate-900 group-hover:text-green-700 transition-colors">{whatsappNumber}</div>
-            <div class="text-sm text-slate-400">Message us directly</div>
+            <div class="text-lg font-semibold text-slate-900 group-hover:text-green-700 transition-colors">{whatsappDisplay}</div>
+            <div class="text-sm text-slate-400">Message us directly — fastest response</div>
           </div>
         </a>
 
         <!-- Email -->
-        <a href={`mailto:${email}`} class="tap-scale group flex items-center gap-4 md:gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:p-6 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-50 transition-all active:scale-[0.99]">
+        <a href={`mailto:${contact.email}`} class="tap-scale group flex items-center gap-4 md:gap-5 rounded-2xl border border-slate-200 bg-white p-5 md:p-6 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-50 transition-all active:scale-[0.99]">
           <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -68,19 +81,20 @@ const whatsappHref = region === 'uae'
           </div>
           <div>
             <div class="text-xs text-slate-400 uppercase tracking-wider mb-0.5">Email</div>
-            <div class="text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors break-all">{email}</div>
+            <div class="text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">{contact.email}</div>
+            <div class="text-sm text-slate-400">{contact.website}</div>
           </div>
         </a>
       </div>
 
       <!-- CTA Card -->
       <div class="rounded-2xl bg-[#0b1929] p-8 lg:p-10 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-teal-600/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-teal-600/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
         <div class="relative">
           <div class="mb-6">
             <h3 class="text-2xl font-bold text-white mb-3">Ready to build a safer operation?</h3>
             <p class="text-slate-400 leading-relaxed">
-              Every space — from your logistics fleet to your family home — deserves structured safety, proactive planning, and reliable support.
+              From logistics fleets to facility management — Celeson delivers integrated solutions across India and the GCC. WhatsApp or email us for a prompt response.
             </p>
           </div>
 
@@ -108,7 +122,7 @@ const whatsappHref = region === 'uae'
               Chat on WhatsApp
             </a>
             <a
-              href={`mailto:${email}`}
+              href={`mailto:${contact.email}`}
               class="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all"
             >
               Send an Email

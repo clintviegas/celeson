@@ -1,0 +1,44 @@
+---
+import { hero } from '../data/content';
+import { uaeRegionalOverview, indiaRegionalOverview } from '../data/services';
+import { contact } from '../data/content';
+import type { BusinessRegion } from '../data/brief';
+import { getRegionLabel } from '../data/regionNav';
+
+interface Props {
+  region: BusinessRegion;
+}
+const { region } = Astro.props;
+
+const meta = region === 'uae' ? hero.uae : hero.india;
+const overview = region === 'uae' ? uaeRegionalOverview : indiaRegionalOverview;
+const image = region === 'uae' ? '/images/hero-uae-logistics.png' : '/images/hero-india-control-room.png';
+const regionContact = region === 'uae' ? contact.uae : contact.india;
+const regionLabel = getRegionLabel(region);
+---
+
+<section class="relative bg-[#0b1929] overflow-hidden">
+  <div class="absolute inset-0">
+    <img src={image} alt="" class="w-full h-full object-cover opacity-30" aria-hidden="true" />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0b1929] via-[#0b1929]/92 to-[#0b1929]/75"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0b1929] via-transparent to-transparent"></div>
+  </div>
+  <div class="absolute top-20 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-[4.25rem] pb-16 md:pb-20">
+    <div class="pt-10 md:pt-14 max-w-2xl">
+      <span class="inline-block rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-[11px] font-semibold text-teal-400 uppercase tracking-wider mb-4">{regionLabel}</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white leading-tight tracking-tight mb-4 text-balance">{overview.headline}</h1>
+      <p class="text-slate-300 leading-relaxed mb-8 text-lg">{overview.intro}</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href={`tel:${regionContact.tel}`} class="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-3.5 text-sm font-semibold text-white hover:bg-teal-500 transition-all shadow-lg shadow-teal-900/40">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          Call Us
+        </a>
+        <a href={`/${region}/contact`} class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all">
+          Reach Out
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

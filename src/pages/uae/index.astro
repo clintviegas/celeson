@@ -1,0 +1,36 @@
+---
+import RegionalLayout from '../../components/RegionalLayout.astro';
+import RegionalHero from '../../components/RegionalHero.astro';
+import Services from '../../components/Services.astro';
+import Industries from '../../components/Industries.astro';
+import ClientLogoMarquee from '../../components/ClientLogoMarquee.astro';
+import RegionalCaseStudyTeaser from '../../components/RegionalCaseStudyTeaser.astro';
+import RegionalInsights from '../../components/RegionalInsights.astro';
+import RegionalContactCTA from '../../components/RegionalContactCTA.astro';
+import { getRegionLabel } from '../../data/regionNav';
+
+const region = 'uae' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/uae"
+  title={`Celeson ${regionLabel} | Logistics, Safety & Operational Excellence`}
+  description={`Celeson Group ${regionLabel} — integrated logistics, transport safety, facility management, and marine services across the Gulf region.`}
+  canonicalURL="https://celesongroup.com/uae"
+>
+  <RegionalHero region={region} />
+  <Services region={region} linkable={true} showOverview={true} />
+  <Industries region={region} />
+  <ClientLogoMarquee region={region} />
+  <RegionalCaseStudyTeaser region={region} limit={3} />
+  <section class="py-6 bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+      <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Latest Insights</h2>
+      <a href="/uae/insights" class="text-sm font-semibold text-teal-600 hover:text-teal-700">View all insights →</a>
+    </div>
+  </section>
+  <RegionalInsights region={region} limit={2} compact={true} />
+  <RegionalContactCTA region={region} />
+</RegionalLayout>

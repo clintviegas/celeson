@@ -1,0 +1,74 @@
+---
+import BrandLogo from './BrandLogo.astro';
+import { contact } from '../data/content';
+import type { BusinessRegion } from '../data/brief';
+import { getRegionNav, getRegionLabel } from '../data/regionNav';
+
+interface Props {
+  region: BusinessRegion;
+  current?: string;
+}
+const { region, current = '' } = Astro.props;
+
+const other = region === 'uae' ? 'india' : 'uae';
+const otherLabel = region === 'uae' ? 'India' : 'UAE & GCC';
+const otherHref = region === 'uae' ? '/india' : '/uae';
+const regionLabel = getRegionLabel(region);
+const regionContact = region === 'uae' ? contact.uae : contact.india;
+const base = `/${region}`;
+const links = getRegionNav(region);
+
+const isActive = (href: string) => current === href || (href !== base && current.startsWith(href));
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="site-header">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-[4.25rem] items-center justify-between gap-2 sm:gap-3">
+      <BrandLogo href="/" subtitleHref={base} size="md" subtitle={`${regionLabel} · Home`} idSuffix="header" />
+
+      <nav class="hidden lg:flex items-center gap-6">
+        {links.map(link => (
+          <a
+            href={link.href}
+            class={`text-sm transition-colors whitespace-nowrap ${isActive(link.href) ? 'text-teal-400 font-semibold' : 'text-slate-300 hover:text-teal-400'}`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href={otherHref} class="hidden sm:inline-flex text-xs font-medium text-slate-400 hover:text-white border border-white/12 rounded-full px-3 py-1.5 transition-colors">
+          {otherLabel}
+        </a>
+        <a href={`tel:${regionContact.tel}`} class="rounded-full bg-teal-600 px-3.5 sm:px-4 py-2 text-sm font-medium text-white hover:bg-teal-500 transition-colors whitespace-nowrap shadow-lg shadow-teal-900/30">
+          Call Us
+        </a>
+        <button id="menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10" aria-label="Open menu">
+          <span class="block h-0.5 w-5 bg-white" id="bar1"></span>
+          <span class="block h-0.5 w-5 bg-white" id="bar2"></span>
+          <span class="block h-0.5 w-5 bg-white" id="bar3"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-[#0b1929]/98 backdrop-blur-md border-t border-white/10 max-h-[85vh] overflow-y-auto">
+    <div class="px-6 py-5 flex flex-col gap-1">
+      {links.map(link => (
+        <a href={link.href} class={`mobile-link text-base py-3 border-b border-white/5 ${isActive(link.href) ? 'text-teal-400 font-semibold' : 'text-slate-300'}`}>{link.label}</a>
+      ))}
+      <a href={`tel:${regionContact.tel}`} class="mobile-link mt-3 text-base font-semibold text-teal-400 py-3 border-b border-white/5">
+        Call Us
+      </a>
+      <a href={otherHref} class="mobile-link text-sm text-slate-400 py-2">Switch to {otherLabel} →</a>
+      <a href="/" class="mobile-link text-sm text-slate-400 py-2">← Celeson Home</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { initHeaderScroll, initMobileMenu } from '../scripts/site-ui';
+  initHeaderScroll();
+  initMobileMenu();
+</script>

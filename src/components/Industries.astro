@@ -1,0 +1,54 @@
+---
+import { industries as allIndustries } from '../data/clients';
+import type { BusinessRegion } from '../data/brief';
+
+interface Props {
+  region?: BusinessRegion;
+}
+const { region } = Astro.props;
+
+const uaeOrder = ['Oil & Gas', 'Petrochemicals', 'Logistics', 'Infrastructure', 'Manufacturing', 'Warehousing', 'Steel', 'Mining', 'Hospitality'];
+const indiaOrder = ['Steel', 'Logistics', 'Manufacturing', 'Oil & Gas', 'Petrochemicals', 'Mining', 'Warehousing', 'Infrastructure', 'Hospitality'];
+
+const order = region === 'india' ? indiaOrder : uaeOrder;
+const industries = region
+  ? [...allIndustries].sort((a, b) => {
+      const ai = order.indexOf(a.name);
+      const bi = order.indexOf(b.name);
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    })
+  : allIndustries;
+
+const subtitle = region === 'uae'
+  ? 'Sector expertise across energy, logistics, marine, and industrial operations in the GCC.'
+  : region === 'india'
+    ? 'Sector expertise across steel, manufacturing, logistics, and industrial transport across India.'
+    : 'Celeson supports organizations across energy, manufacturing, logistics, infrastructure, and community sectors.';
+---
+
+<section id="industries" class="py-16 md:py-24 bg-slate-50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10 reveal-up">
+      <p class="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-2">Industries We Serve</p>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+        Sector Expertise Across India & the GCC
+      </h2>
+      <p class="text-slate-500 text-sm md:text-base">{subtitle}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      {industries.map((ind, i) => (
+        <div
+          class="reveal-up group rounded-2xl border border-slate-200 bg-white p-5 hover:border-teal-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+          style={`transition-delay: ${i * 30}ms`}
+        >
+          <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300">
+            <div class="h-5 w-5" set:html={ind.icon} />
+          </div>
+          <h3 class="text-sm font-bold text-slate-900 mb-1">{ind.name}</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">{ind.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

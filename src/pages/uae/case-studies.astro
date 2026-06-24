@@ -1,0 +1,27 @@
+---
+import RegionalLayout from '../../components/RegionalLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import RegionalCaseStudies from '../../components/RegionalCaseStudies.astro';
+import { getRegionLabel } from '../../data/regionNav';
+
+const region = 'uae' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/uae/case-studies"
+  title={`Case Studies | Celeson ${regionLabel}`}
+  description={`Proven outcomes from Celeson ${regionLabel} — IVMS, marine safety, facility management, and transport compliance case studies.`}
+  canonicalURL="https://celesongroup.com/uae/case-studies"
+>
+  <PageHero
+    title={`Case Studies — ${regionLabel}`}
+    subtitle="Proven Outcomes"
+    breadcrumbs={[
+      { label: regionLabel, href: '/uae' },
+      { label: 'Case Studies' },
+    ]}
+  />
+  <RegionalCaseStudies region={region} />
+</RegionalLayout>

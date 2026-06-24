@@ -17,8 +17,14 @@ pnpm-debug.log*
 .env
 .env.production
 
+# vercel local project link
+.vercel/
+
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
+
+# client reference materials — local only
+client_brief/

@@ -1,0 +1,33 @@
+---
+import RegionalLayout from '../../../components/RegionalLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import Services from '../../../components/Services.astro';
+import { uaeRegionalOverview } from '../../../data/services';
+import { getRegionLabel } from '../../../data/regionNav';
+
+const region = 'uae' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/uae/services"
+  title={`Services | Celeson ${regionLabel}`}
+  description={`Celeson ${regionLabel} services — logistics, transport safety, facility management, marine & port operations, sustainability, and hospitality.`}
+  canonicalURL="https://celesongroup.com/uae/services"
+>
+  <PageHero
+    title="Services & Activities"
+    subtitle={regionLabel}
+    breadcrumbs={[
+      { label: regionLabel, href: '/uae' },
+      { label: 'Services' },
+    ]}
+  />
+  <section class="py-10 bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-slate-600 max-w-3xl leading-relaxed">{uaeRegionalOverview.intro}</p>
+    </div>
+  </section>
+  <Services region={region} linkable={true} showOverview={true} />
+</RegionalLayout>

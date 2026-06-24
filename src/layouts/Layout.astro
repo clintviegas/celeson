@@ -4,11 +4,12 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
-  region?: 'uae' | 'india';
+  region?: 'uae' | 'india' | 'home' | 'about';
   canonicalURL?: string;
+  article?: { title: string; description: string; date: string; image: string; slug: string };
 }
 
-const { title, description, region = 'uae', canonicalURL } = Astro.props;
+const { title, description, region = 'uae', canonicalURL, article } = Astro.props;
 const siteURL = 'https://celesongroup.com';
 ---
 
@@ -27,7 +28,7 @@ const siteURL = 'https://celesongroup.com';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL ?? siteURL} />
-    <meta property="og:site_name" content="Celeson | 360° Safety & Facility Solutions" />
+    <meta property="og:site_name" content="Celeson Enterprise Pvt Ltd" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -35,19 +36,34 @@ const siteURL = 'https://celesongroup.com';
     <meta name="twitter:description" content={description} />
 
     <!-- Schema.org -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Celeson | 360° Safety & Facility Solutions",
-      "description": description,
-      "url": siteURL,
-      "areaServed": region === 'uae' ? "United Arab Emirates" : "India",
-      "knowsAbout": ["Safety Consulting", "Logistics Safety", "Fleet Management", "HSE", "Facility Safety"],
-      "founder": { "@type": "Person", "name": "Arundhan Alphones" }
-    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(
+      article
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article.title,
+            "description": article.description,
+            "datePublished": article.date,
+            "image": `https://celesongroup.com${article.image}`,
+            "url": `https://celesongroup.com/insights/${article.slug}`,
+            "author": { "@type": "Organization", "name": "Celeson Enterprise Pvt Ltd" },
+            "publisher": { "@type": "Organization", "name": "Celeson Enterprise Pvt Ltd", "url": siteURL },
+          }
+        : {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Celeson Enterprise Pvt Ltd",
+            "description": description,
+            "url": siteURL,
+            "areaServed": region === 'uae' ? "United Arab Emirates" : region === 'india' ? "India" : ["India", "United Arab Emirates"],
+            "knowsAbout": ["Safety Consulting", "Logistics Safety", "Fleet Management", "HSE", "Facility Safety"],
+            "founder": { "@type": "Person", "name": "Arundhan Alphones" },
+          }
+    )} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

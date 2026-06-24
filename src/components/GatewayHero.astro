@@ -1,0 +1,20 @@
+---
+import { philosophy, hero, tagline } from '../data/content';
+---
+
+<section class="relative pt-[4.25rem] overflow-hidden bg-[#0b1929]">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[300px] bg-blue-600/8 rounded-full blur-[100px]"></div>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-4 md:pt-16 md:pb-6 text-center">
+    <p class="text-xs font-bold text-teal-400 uppercase tracking-[0.2em] mb-4">33+ Years · India & GCC</p>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto mb-4 text-balance">
+      {philosophy.headline}
+    </h1>
+    <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-2">
+      {hero.sharedSubline}
+    </p>
+    <p class="text-sm text-teal-400/80 italic">{tagline}</p>
+  </div>
+</section>

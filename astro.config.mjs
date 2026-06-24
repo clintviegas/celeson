@@ -6,6 +6,19 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
+  redirects: {
+    '/about': '/#about',
+    '/services': '/',
+    '/contact': '/',
+    '/verticals': '/',
+    '/case-studies': '/',
+    '/careers': '/',
+    '/insights': '/',
+    '/uae/about': '/#about',
+    '/india/about': '/#about',
+    '/uae/services': '/uae',
+    '/india/services': '/india',
+  },
 });

@@ -1,0 +1,13 @@
+---
+import type { BusinessRegion } from '../data/brief';
+import WhatsAppFloat from './WhatsAppFloat.astro';
+import MobileBar from './MobileBar.astro';
+
+interface Props {
+  region?: BusinessRegion;
+}
+const { region = 'uae' } = Astro.props;
+---
+
+<WhatsAppFloat region={region} />
+<MobileBar region={region} />

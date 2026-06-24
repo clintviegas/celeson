@@ -1,0 +1,40 @@
+---
+import { getInsight, getInsightsForRegion } from '../../../data/insights';
+import RegionalLayout from '../../../components/RegionalLayout.astro';
+import InsightArticle from '../../../components/InsightArticle.astro';
+import { getRegionLabel } from '../../../data/regionNav';
+
+export function getStaticPaths() {
+  return getInsightsForRegion('india').map((article) => ({
+    params: { slug: article.slug },
+  }));
+}
+
+const region = 'india' as const;
+const { slug } = Astro.params;
+const article = getInsight(slug!);
+
+if (!article || (article.region !== 'india' && article.region !== 'both')) {
+  return Astro.redirect('/india/insights');
+}
+
+const related = getInsightsForRegion('india').filter((a) => a.slug !== slug).slice(0, 2);
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/india/insights"
+  title={`${article.title} | Celeson ${regionLabel}`}
+  description={article.description}
+  canonicalURL={`https://celesongroup.com/india/insights/${article.slug}`}
+  article={{
+    title: article.title,
+    description: article.description,
+    date: article.date,
+    image: article.image,
+    slug: article.slug,
+  }}
+>
+  <InsightArticle article={article} region={region} related={related} />
+</RegionalLayout>

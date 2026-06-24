@@ -1,0 +1,107 @@
+---
+import type { InsightArticle } from '../data/insights';
+import { getGlobalServiceTitle } from '../data/services';
+import type { BusinessRegion } from '../data/brief';
+
+interface Props {
+  article: InsightArticle;
+  region: BusinessRegion;
+  related: InsightArticle[];
+}
+const { article, region, related } = Astro.props;
+const base = `/${region}`;
+---
+
+<article itemscope itemtype="https://schema.org/Article">
+  <header class="bg-[#0b1929] py-12 md:py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <a href={`${base}/insights`} class="inline-flex items-center gap-1 text-sm text-teal-400 hover:text-teal-300 mb-6">
+        ← Back to Insights
+      </a>
+      {article.serviceIds && article.serviceIds.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+          {article.serviceIds.map(id => (
+            <a href={`${base}/services/${id}`} class="text-xs font-semibold text-teal-300/90 hover:text-teal-200 border border-teal-500/30 rounded-full px-3 py-0.5">
+              {getGlobalServiceTitle(id)}
+            </a>
+          ))}
+        </div>
+      )}
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="rounded-full bg-teal-500/20 text-teal-400 px-3 py-0.5 text-xs font-bold uppercase">{article.category}</span>
+        <time datetime={article.date} itemprop="datePublished" class="text-xs text-slate-500">{new Date(article.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+        <span class="text-xs text-slate-500">{article.readTime}</span>
+      </div>
+      <h1 itemprop="headline" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mb-4">
+        {article.title}
+      </h1>
+      <p itemprop="description" class="text-slate-400 text-lg leading-relaxed">{article.description}</p>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="rounded-2xl overflow-hidden border border-slate-200 mb-10 -mt-20 relative z-10 shadow-xl">
+      <img src={article.image} alt={article.title} itemprop="image" class="w-full h-auto max-h-[420px] object-cover" width="800" height="450" />
+    </div>
+
+    {article.youtube && (
+      <div class="rounded-2xl overflow-hidden border border-slate-200 mb-10 aspect-video bg-slate-900">
+        <iframe src={article.youtube} title={article.title} class="w-full h-full" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    )}
+
+    {article.download && (
+      <div class="rounded-2xl border border-teal-200 bg-teal-50 p-5 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p class="text-sm font-bold text-teal-900">Free downloadable resource</p>
+          <p class="text-sm text-teal-700/80">{article.download.label}</p>
+        </div>
+        <a href={article.download.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-500 transition-colors flex-shrink-0">
+          Download
+        </a>
+      </div>
+    )}
+
+    <div itemprop="articleBody">
+      {article.content.map((section) => (
+        <div class="mb-8">
+          {section.heading && <h2 class="text-xl font-bold text-slate-900 mb-3">{section.heading}</h2>}
+          {section.paragraphs.map((p) => <p class="text-slate-600 leading-relaxed mb-4">{p}</p>)}
+        </div>
+      ))}
+    </div>
+
+    {article.slug === 'kori-cafe-hospitality-india' && (
+      <div class="rounded-2xl border border-orange-200 bg-orange-50 p-6 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p class="text-sm font-bold text-orange-900">Visit Kori Café</p>
+          <p class="text-sm text-orange-800/80">Bandra West, Mumbai — open Wed–Mon, 7:30am–10:30pm</p>
+        </div>
+        <a href="https://kori.cafe/" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-500 transition-colors flex-shrink-0">
+          kori.cafe →
+        </a>
+      </div>
+    )}
+
+    <div class="mt-12 pt-8 border-t border-slate-200">
+      <p class="text-sm font-semibold text-slate-900 mb-4">Need help implementing this in your operations?</p>
+      <a href={`${base}/contact`} class="inline-flex rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white hover:bg-teal-500 transition-colors">
+        Speak with Celeson
+      </a>
+    </div>
+
+    {related.length > 0 && (
+      <div class="mt-16">
+        <h2 class="text-lg font-bold text-slate-900 mb-5">Related articles</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {related.map((r) => (
+            <a href={`${base}/insights/${r.slug}`} class="rounded-xl border border-slate-200 p-4 hover:border-teal-300 hover:shadow-md transition-all">
+              <p class="text-xs text-teal-600 font-semibold mb-1">{r.category}</p>
+              <p class="text-sm font-bold text-slate-900 leading-snug">{r.title}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</article>

@@ -1,0 +1,27 @@
+---
+import RegionalLayout from '../../components/RegionalLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import RegionalCaseStudies from '../../components/RegionalCaseStudies.astro';
+import { getRegionLabel } from '../../data/regionNav';
+
+const region = 'india' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/india/case-studies"
+  title={`Case Studies | Celeson ${regionLabel}`}
+  description={`Proven outcomes from Celeson India — Shell driver management, Reliance supply chain, Kori Café hospitality, and more.`}
+  canonicalURL="https://celesongroup.com/india/case-studies"
+>
+  <PageHero
+    title={`Case Studies — ${regionLabel}`}
+    subtitle="Proven Outcomes"
+    breadcrumbs={[
+      { label: regionLabel, href: '/india' },
+      { label: 'Case Studies' },
+    ]}
+  />
+  <RegionalCaseStudies region={region} />
+</RegionalLayout>

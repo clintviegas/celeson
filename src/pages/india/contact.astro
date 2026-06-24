@@ -1,0 +1,28 @@
+---
+import RegionalLayout from '../../components/RegionalLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import RegionalContact from '../../components/RegionalContact.astro';
+import { getRegionLabel } from '../../data/regionNav';
+
+const region = 'india' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/india/contact"
+  title={`Contact | Celeson Enterprise Pvt Ltd — ${regionLabel}`}
+  description={`Contact Celeson India — call, WhatsApp, or email info@celesongroup.com.`}
+  canonicalURL="https://celesongroup.com/india/contact"
+>
+  <PageHero
+    title={`Contact — ${regionLabel}`}
+    subtitle="Reach Out"
+    breadcrumbs={[
+      { label: 'Celeson', href: '/' },
+      { label: regionLabel, href: '/india' },
+      { label: 'Contact' },
+    ]}
+  />
+  <RegionalContact region={region} />
+</RegionalLayout>

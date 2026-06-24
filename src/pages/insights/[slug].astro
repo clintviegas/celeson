@@ -1,0 +1,19 @@
+---
+import { insights, getInsight } from '../../data/insights';
+
+export function getStaticPaths() {
+  return insights.map((article) => ({
+    params: { slug: article.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const article = getInsight(slug!);
+
+if (!article) {
+  return Astro.redirect('/');
+}
+
+const targetRegion = article.region === 'india' ? 'india' : 'uae';
+return Astro.redirect(`/${targetRegion}/insights/${article.slug}`);
+---

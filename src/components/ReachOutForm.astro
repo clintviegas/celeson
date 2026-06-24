@@ -1,0 +1,71 @@
+---
+import type { BusinessRegion } from '../data/brief';
+
+interface Props {
+  region: BusinessRegion;
+}
+const { region } = Astro.props;
+const regionLabel = region === 'uae' ? 'UAE & GCC' : 'India';
+const returnUrl = new URL(`/${region}?sent=1#contact`, Astro.url.origin).href;
+---
+
+<form
+  action="https://formsubmit.co/info@celesongroup.com"
+  method="POST"
+  class="space-y-4"
+  id="reach-out-form"
+>
+  <input type="hidden" name="_subject" value={`New enquiry — Celeson ${regionLabel}`} />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_next" value={returnUrl} />
+  <input type="hidden" name="Region" value={regionLabel} />
+  <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label for={`name-${region}`} class="block text-xs font-medium text-slate-500 mb-1.5">Full name *</label>
+      <input type="text" id={`name-${region}`} name="Name" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition" placeholder="Your name" />
+    </div>
+    <div>
+      <label for={`company-${region}`} class="block text-xs font-medium text-slate-500 mb-1.5">Company</label>
+      <input type="text" id={`company-${region}`} name="Company" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition" placeholder="Organisation" />
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div>
+      <label for={`email-${region}`} class="block text-xs font-medium text-slate-500 mb-1.5">Email *</label>
+      <input type="email" id={`email-${region}`} name="Email" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition" placeholder="you@company.com" />
+    </div>
+    <div>
+      <label for={`phone-${region}`} class="block text-xs font-medium text-slate-500 mb-1.5">Phone *</label>
+      <input type="tel" id={`phone-${region}`} name="Phone" required class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition" placeholder="+971 / +91" />
+    </div>
+  </div>
+
+  <div>
+    <label for={`message-${region}`} class="block text-xs font-medium text-slate-500 mb-1.5">How can we help? *</label>
+    <textarea id={`message-${region}`} name="Message" required rows="4" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition resize-none" placeholder="Tell us about your logistics, safety, or facility needs…"></textarea>
+  </div>
+
+  <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-8 py-3.5 text-sm font-semibold text-white hover:bg-teal-500 transition-colors">
+    Send Message
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+  </button>
+</form>
+
+<div id="form-success" class="hidden rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
+  <p class="text-green-800 font-semibold mb-1">Message sent!</p>
+  <p class="text-sm text-green-700">We'll get back to you at info@celesongroup.com shortly.</p>
+</div>
+
+<script>
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    const form = document.getElementById('reach-out-form');
+    const success = document.getElementById('form-success');
+    form?.classList.add('hidden');
+    success?.classList.remove('hidden');
+    history.replaceState(null, '', window.location.pathname + '#contact');
+  }
+</script>

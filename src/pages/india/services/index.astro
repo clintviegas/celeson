@@ -1,0 +1,33 @@
+---
+import RegionalLayout from '../../../components/RegionalLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import Services from '../../../components/Services.astro';
+import { indiaRegionalOverview } from '../../../data/services';
+import { getRegionLabel } from '../../../data/regionNav';
+
+const region = 'india' as const;
+const regionLabel = getRegionLabel(region);
+---
+
+<RegionalLayout
+  region={region}
+  current="/india/services"
+  title={`Services | Celeson ${regionLabel}`}
+  description={`Celeson India services — supply chain consulting, driver management, road safety, industrial services, IVMS technology, and Kori Café hospitality.`}
+  canonicalURL="https://celesongroup.com/india/services"
+>
+  <PageHero
+    title="Services & Activities"
+    subtitle={regionLabel}
+    breadcrumbs={[
+      { label: regionLabel, href: '/india' },
+      { label: 'Services' },
+    ]}
+  />
+  <section class="py-10 bg-white border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-lg text-slate-600 max-w-3xl leading-relaxed">{indiaRegionalOverview.intro}</p>
+    </div>
+  </section>
+  <Services region={region} linkable={true} showOverview={true} />
+</RegionalLayout>

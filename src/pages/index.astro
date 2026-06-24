@@ -1,31 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import Process from '../components/Process.astro';
-import About from '../components/About.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
-import WhatsAppFloat from '../components/WhatsAppFloat.astro';
-import MobileBar from '../components/MobileBar.astro';
+import GatewayHeader from '../components/GatewayHeader.astro';
+import GatewayHero from '../components/GatewayHero.astro';
+import GatewayLanding from '../components/GatewayLanding.astro';
+import GatewayAbout from '../components/GatewayAbout.astro';
+import TransportPillars from '../components/TransportPillars.astro';
+import { companyName } from '../data/content';
 ---
 
 <Layout
-  title="Celeson | 360° Safety & Facility Solutions — UAE"
-  description="End-to-end safety solutions for logistics, transport fleets, school systems, and facilities across the UAE. 30+ years of leadership experience. Call +971 565 058 627."
-  region="uae"
+  title={`${companyName} | Safety, Logistics & Operational Excellence`}
+  description="Celeson Enterprise Pvt Ltd — 33+ years of safety, logistics and operational excellence across India and the GCC. Select your region to explore services."
+  region="home"
   canonicalURL="https://celesongroup.com"
 >
-  <Header region="uae" />
-  <main>
-    <Hero region="uae" />
-    <Services region="uae" />
-    <Process />
-    <About region="uae" />
-    <Contact region="uae" />
+  <GatewayHeader />
+  <main class="bg-[#0b1929]">
+    <GatewayHero />
+    <GatewayLanding />
+    <GatewayAbout />
+    <TransportPillars />
   </main>
-  <Footer region="uae" />
-  <WhatsAppFloat region="uae" />
-  <MobileBar region="uae" />
 </Layout>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" role="img" aria-label="Vizag Steel Plant">
+  <rect width="280" height="80" fill="#fff"/>
+  <rect x="10" y="15" width="50" height="50" rx="4" fill="#1B4F8A"/>
+  <text x="35" y="48" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="14" fill="#fff">RINL</text>
+  <text x="165" y="38" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="16" fill="#1B4F8A">Vizag Steel Plant</text>
+  <text x="165" y="56" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="10" fill="#666">Rashtriya Ispat Nigam Limited</text>
+</svg>
