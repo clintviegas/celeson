@@ -10,6 +10,12 @@ interface Props {
 }
 const { article, region, related } = Astro.props;
 const base = `/${region}`;
+const imageClass =
+  article.slug === 'kori-cafe-hospitality-india' ? 'object-cover object-center' :
+  article.slug === 'arun-dubai-chamber-speaker.png' || article.slug === 'arundhan-alphones-dubai-chamber-road-safety-speaker' ? 'object-cover object-top' :
+  article.slug === 'rospa-gold-award-safety-excellence' ? 'object-cover object-top' :
+  'object-cover';
+const quoteSlugs = ['arundhan-alphones-dubai-chamber-road-safety-speaker', 'rospa-gold-award-safety-excellence'];
 ---
 
 <article itemscope itemtype="https://schema.org/Article">
@@ -41,7 +47,7 @@ const base = `/${region}`;
 
   <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
     <div class="rounded-2xl overflow-hidden border border-slate-200 mb-10 -mt-20 relative z-10 shadow-xl">
-      <img src={article.image} alt={article.title} itemprop="image" class="w-full h-auto max-h-[420px] object-cover" width="800" height="450" />
+      <img src={article.image} alt={article.title} itemprop="image" class={`w-full h-auto max-h-[420px] ${imageClass}`} width="800" height="450" />
     </div>
 
     {article.youtube && (
@@ -63,10 +69,18 @@ const base = `/${region}`;
     )}
 
     <div itemprop="articleBody">
-      {article.content.map((section) => (
+      {article.content.map((section, si) => (
         <div class="mb-8">
           {section.heading && <h2 class="text-xl font-bold text-slate-900 mb-3">{section.heading}</h2>}
-          {section.paragraphs.map((p) => <p class="text-slate-600 leading-relaxed mb-4">{p}</p>)}
+          {section.paragraphs.map((p, pi) => (
+            quoteSlugs.includes(article.slug) && si === 0 && pi === 0 ? (
+              <blockquote class="border-l-4 border-teal-500 pl-5 py-1 mb-6 text-slate-700 italic leading-relaxed text-lg">
+                "{p}"
+              </blockquote>
+            ) : (
+              <p class="text-slate-600 leading-relaxed mb-4">{p}</p>
+            )
+          ))}
         </div>
       ))}
     </div>

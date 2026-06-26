@@ -9,7 +9,9 @@ export const philosophy = {
 
 export const hero = {
   sharedSubline:
-    'With over 33 years of multinational leadership experience across India and the GCC, Celeson Group delivers integrated business solutions that improve operational performance, strengthen compliance, protect people and create sustainable value.',
+    'Celeson Enterprise Pvt Ltd helps organisations across India and the GCC run safer logistics, stronger supply chains, and compliant operations — from fleet IVMS and driver management to industrial HSE and hospitality.',
+  gatewayExplain:
+    'Start by choosing your region below. Each site is tailored to how Celeson serves that market — same company, focused local expertise.',
   uae: {
     headline: 'Integrated Logistics, Safety & Operational Excellence',
     badge: 'Celeson UAE & GCC',
@@ -58,7 +60,30 @@ export const valuePillars = [
 ];
 
 export const whoWeAre =
-  'Celeson Group is a diversified organization providing professional services across supply chain, transport safety, facility management, hospitality, sustainability, and community development. Founded by Arundhan Alphones, Celeson combines practical field experience with international best practices to deliver measurable business results.';
+  'Celeson Enterprise Pvt Ltd is a diversified organisation founded by Arundhan Alphones — providing transport safety, supply chain consulting, facility management, industrial services, and hospitality (including Kori Café in Mumbai). We combine 33+ years of field leadership with international best practice.';
+
+export const businessVerticals = [
+  {
+    title: 'Transport Safety & IVMS',
+    desc: 'Fleet audits, journey management, driver competency, control rooms, and Goal Zero safety culture.',
+    regions: 'India & UAE',
+  },
+  {
+    title: 'Supply Chain & Logistics',
+    desc: 'End-to-end assessments, multimodal optimisation, warehouse HSE, and industrial distribution.',
+    regions: 'India & UAE',
+  },
+  {
+    title: 'Industrial & Facility Services',
+    desc: 'Steel plant logistics, contractor compliance, labour camps, and facility management.',
+    regions: 'Primarily India · UAE',
+  },
+  {
+    title: 'Hospitality — Kori Café',
+    desc: 'Family-run café and corporate catering in Bandra West, with HACCP-aligned kitchen operations.',
+    regions: 'India',
+  },
+];
 
 export const transportPillars = [
   {

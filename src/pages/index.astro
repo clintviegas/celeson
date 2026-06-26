@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import GatewayHeader from '../components/GatewayHeader.astro';
 import GatewayHero from '../components/GatewayHero.astro';
+import GatewayWhatWeDo from '../components/GatewayWhatWeDo.astro';
 import GatewayLanding from '../components/GatewayLanding.astro';
+import GatewayProof from '../components/GatewayProof.astro';
 import GatewayAbout from '../components/GatewayAbout.astro';
 import TransportPillars from '../components/TransportPillars.astro';
 import { companyName } from '../data/content';
@@ -10,14 +12,16 @@ import { companyName } from '../data/content';
 
 <Layout
   title={`${companyName} | Safety, Logistics & Operational Excellence`}
-  description="Celeson Enterprise Pvt Ltd — 33+ years of safety, logistics and operational excellence across India and the GCC. Select your region to explore services."
+  description="Celeson Enterprise Pvt Ltd — transport safety, supply chain, industrial services, and Kori Café hospitality across India and the GCC."
   region="home"
   canonicalURL="https://celesongroup.com"
 >
   <GatewayHeader />
   <main class="bg-[#0b1929]">
     <GatewayHero />
+    <GatewayWhatWeDo />
     <GatewayLanding />
+    <GatewayProof />
     <GatewayAbout />
     <TransportPillars />
   </main>

@@ -436,6 +436,109 @@ export const insights: InsightArticle[] = [
     ],
   },
   {
+    slug: 'integrated-steel-plant-supply-chain-india',
+    title: 'Project Highlight: End-to-End Supply Chain Assessment for an Integrated Steel Plant',
+    description:
+      'A recent end-to-end supply chain and logistics assessment carried out for a large integrated steel plant — covering inbound raw materials, internal material handling, and outbound finished steel movements across rail, road, port, and coastal corridors.',
+    category: 'Case Study',
+    region: 'india',
+    date: '2025-11-20',
+    readTime: '7 min read',
+    image: '/images/project-steel-plant-india.png',
+    keywords: ['steel plant logistics', 'supply chain assessment India', 'multimodal logistics', 'inbound outbound logistics', 'turnaround time reduction'],
+    content: [
+      {
+        paragraphs: [
+          'A recent end-to-end supply chain and logistics assessment was carried out for a large integrated steel plant. The engagement covered inbound raw materials, internal material handling, and outbound finished steel movements — with a strong focus on multimodal optimization, cost efficiency, turnaround time reduction, and safety-driven operations.',
+          'A step towards building future-ready, resilient, and efficient logistics ecosystems for India\'s steel sector.',
+        ],
+      },
+      {
+        heading: 'What We Did',
+        paragraphs: [
+          'The scope covered four key areas: assessing end-to-end raw material and finished goods flow, reviewing inbound logistics via rail, road, and port, evaluating internal logistics and material handling systems, and analysing outbound steel dispatch across India.',
+        ],
+      },
+      {
+        heading: 'Key Focus Areas',
+        paragraphs: [
+          'Multimodal optimization across Rail, Road, Port, and Coastal corridors was central to the engagement. The team identified opportunities for cost efficiency and delivery timeline improvement, alongside targeted reduction in turnaround time, demurrage, and handling losses.',
+        ],
+      },
+      {
+        heading: 'Outcomes',
+        paragraphs: [
+          'Clear improvement opportunities were identified with practical recommendations on process, infrastructure, and digital enablement. A future-ready logistics roadmap was developed — aligned with safety standards and production planning requirements.',
+          'Driving efficiency. Strengthening safety. Enabling scale.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'arundhan-alphones-dubai-chamber-road-safety-speaker',
+    title: 'Industry Speaker — Road Safety, Driver Behaviour & Fleet Performance',
+    description:
+      'A glimpse of Arundhan Alphones\' involvement as a regular speaker at industry and community forums — sharing perspectives on driver behaviour, operational excellence, transport safety, and fleet performance improvement.',
+    category: 'HSE & Compliance',
+    region: 'both',
+    date: '2025-10-05',
+    readTime: '5 min read',
+    image: '/images/arun-dubai-chamber-speaker.png',
+    keywords: ['Dubai Chamber road safety', 'driver awareness seminar UAE', 'transport safety thought leadership', 'fleet performance GCC'],
+    content: [
+      {
+        paragraphs: [
+          'A glimpse of my involvement as a regular speaker at industry and community forums, sharing perspectives on driver behaviour, operational excellence, transport safety and fleet performance improvement. Committed to strengthening safety culture and operational discipline across the logistics and transport sector.',
+        ],
+      },
+      {
+        heading: 'Dubai Chamber Sustainability Network',
+        paragraphs: [
+          'At the Dubai Chamber Sustainability Network\'s Road Safety and Driver Awareness Seminar, Arundhan Alphones addressed fleet operators, HSE professionals, and industry leaders on practical steps to move from reactive safety management to a genuine prevention-first culture.',
+          'Key themes included the link between driver behaviour and operational costs, how IVMS and journey management reduce fleet risk, and why Goal Zero requires leadership commitment — not just compliance checklists.',
+        ],
+      },
+      {
+        heading: 'Speaking & Advisory',
+        paragraphs: [
+          'Celeson\'s field expertise — built across 33+ years serving multinational organisations in the GCC and India — underpins this platform. For speaker enquiries or advisory on transport safety and fleet HSE, contact Celeson at info@celesongroup.com.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'rospa-gold-award-safety-excellence',
+    title: 'RoSPA Gold Award — Excellence in Health, Safety & Risk Management',
+    description:
+      'Remembering with pride the RoSPA Gold Award in Birmingham, UK — recognising excellence in health, safety and risk management and a world-class safety culture.',
+    category: 'HSE & Compliance',
+    region: 'both',
+    date: '2018-11-01',
+    readTime: '4 min read',
+    image: '/images/arun-rospa-gold-award.png',
+    keywords: ['RoSPA Gold Award', 'health safety excellence', 'NEBOSH', 'transport safety leadership', 'Goal Zero culture'],
+    content: [
+      {
+        paragraphs: [
+          'Remembering with pride the achievement of the RoSPA Gold Award in Birmingham, UK, recognizing excellence in health, safety and risk management. A proud milestone reflecting strong teamwork, operational discipline and commitment toward building a world-class safety culture.',
+        ],
+      },
+      {
+        heading: 'What the RoSPA Gold Award Represents',
+        paragraphs: [
+          'The RoSPA Health & Safety Awards — sponsored by NEBOSH — are among the most respected recognitions in occupational safety globally. The Gold Award reflects sustained excellence in risk management, operational discipline, and a culture where safety is led from the top.',
+          'This milestone was achieved during leadership of transport safety programmes at Tristar Transport LLC — work that continues to inform Celeson\'s prevention-first philosophy today.',
+        ],
+      },
+      {
+        heading: 'From Award to Everyday Practice',
+        paragraphs: [
+          'Awards matter when they translate into daily behaviour: competent drivers, audited journeys, visible leadership, and systems that prevent harm before it occurs. That is the standard Celeson brings to every engagement across India and the GCC — Predict. Prevent. Protect.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'vizag-steel-plant-logistics-india',
     title: 'Vizag Steel Plant — Industrial Logistics & Transport Safety',
     description:
@@ -637,56 +740,64 @@ export const insights: InsightArticle[] = [
   },
   {
     slug: 'kori-cafe-hospitality-india',
-    title: 'Kori Café — From Supply Chain Roots to Your Daily Pause',
+    title: 'Kori Café — A Family Legacy Brewed Into Every Cup',
     description:
-      'How Celeson Group\'s hospitality division brings operational excellence, HACCP food safety, and family warmth to Kori Café in Bandra West — and what it means for corporate catering across India.',
+      'Celeson Enterprises Private Limited\'s hospitality flagship in Bandra West — built on 25+ years of family bakery heritage, Coorg coffee roots, wellness-focused F&B, and the same operational discipline that drives Celeson\'s safety and logistics work.',
     category: 'Case Study',
     region: 'india',
     serviceIds: ['hospitality'],
     date: '2025-04-15',
-    readTime: '8 min read',
-    image: '/images/hero-india-highway.png',
-    keywords: ['Kori Café', 'hospitality India', 'HACCP', 'Bandra café', 'corporate catering', 'Celeson Group'],
+    readTime: '9 min read',
+    image: '/images/kori-cafe-exterior.png',
+    keywords: ['Kori Café', 'hospitality India', 'HACCP', 'Bandra café', 'corporate catering', 'Celeson Enterprises', 'Made in India coffee equipment', 'wellness café Mumbai'],
     content: [
       {
         paragraphs: [
-          'Kori Café is more than a neighbourhood coffee shop — it is Celeson Group\'s hospitality flagship in Bandra West, Mumbai. Born from a family that built careers in supply chain, investment banking, and marketing, Kori brings the same operational discipline Celeson applies to logistics and safety into food and beverage.',
+          'Kori Café is the hospitality flagship of Celeson Enterprise Pvt Ltd — a forest-green storefront on Bandra West\'s 30th Road, blending homestyle bakery traditions with Coorg coffee heritage. Wellness, craft, and community come together under one roof.',
           'Visit Kori at kori.cafe — open Wednesday to Monday, 7:30am to 10:30pm, just off Linking Road in Bandra West.',
         ],
       },
       {
-        heading: 'Why Celeson Entered Hospitality',
+        heading: 'The Family Behind the Brand',
         paragraphs: [
-          'Celeson\'s founder spent decades in supply chain and logistics — managing complexity, compliance, and people at scale. Hospitality was a natural extension: restaurant operations demand the same rigour as warehouse HSE — standard operating procedures, supplier controls, temperature monitoring, and customer safety.',
-          'Kori Café lets Celeson demonstrate that operational excellence translates across industries. The café is a living case study for corporate catering, cloud kitchen management, and HACCP-compliant food services.',
+          'Celeson Enterprises is a family-inspired brand built on care, innovation, and quality. The founding family brings together expertise in supply chain, investment banking, marketing, and over two decades of authentic food traditions. That combination — operational rigour meets family warmth — is what makes Kori different from a typical café.',
+          'The vision: to build a trusted ecosystem of innovative ventures that celebrate Indian craftsmanship, deliver world-class experiences, and create meaningful social impact.',
+        ],
+      },
+      {
+        heading: 'Why Operational Excellence Belongs in Hospitality',
+        paragraphs: [
+          'Restaurant operations demand the same rigour as warehouse HSE: standard operating procedures, supplier controls, temperature monitoring, staff competency, and customer safety. Celeson applies HACCP principles to Kori\'s kitchen — food safety programmes, storage controls, and supplier verification aligned with hospitality best practice.',
+          'The same discipline that underpins Celeson\'s safety and logistics work runs behind the counter at Kori. That\'s not coincidence — it\'s design.',
+        ],
+      },
+      {
+        heading: 'What We Solve',
+        paragraphs: [
+          'The Indian food and beverage market is fragmented and lacks trusted integrated brands. Cafés and restaurants often lack authentic, health-driven offerings. India depends on costly imported coffee machines and equipment. Hospitality and logistics face major skill and professionalism gaps. And stress and anxiety are at all-time highs — especially among youth and professionals who need a genuine place to pause.',
+          'Kori was built to answer all of these.',
+        ],
+      },
+      {
+        heading: 'Our Solutions',
+        paragraphs: [
+          'Kori introduces authentic, wellness-focused food and beverage offerings — ready-to-drink beverages with functional ingredients alongside an all-day menu. Coffee is sourced from Coorg estates, handpicked for bold aroma and smooth flavour.',
+          'Signature offerings include Berry Almond, Vietnamese Cold Brew, Spanish Latte, Iced Matcha, Strawberry Matcha, Cajun Spiced Chicken Schnitzel, and the Fiery Chicken Burger.',
+          'Beyond the cup, Celeson Enterprises is working to design and manufacture cost-effective, Made-in-India coffee equipment — reducing India\'s dependence on costly imported machines. Training academies are planned to bridge the skill and professionalism gaps that hold the hospitality industry back.',
         ],
       },
       {
         heading: 'Kori Café Today',
         paragraphs: [
-          'Located at Shop No. 1, Hari Niwas Co-operative Housing Society, 30th Road, Off SV Road, Bandra West, Mumbai 400050, Kori offers an all-day menu from breakfast through dinner.',
-          'Signature offerings include Berry Almond, Vietnamese Cold Brew, Spanish Latte, Iced Matcha, Strawberry Matcha, Cajun Spiced Chicken Schnitzel, and the Fiery Chicken Burger. Coffee is sourced from Coorg estates — handpicked for bold aroma and smooth flavour.',
-          'The atmosphere is designed for everyday pauses: solo coffee breaks, catch-ups between meetings, or quiet time with a book. Warm lighting, soft music, and no reason to hurry.',
+          'Located at Shop No. 1, Hari Niwas Co-operative Housing Society, 30th Road, Off SV Road, Bandra West, Mumbai 400050 — Kori is open six days a week for breakfast through dinner. The atmosphere is designed for everyday pauses: solo coffee breaks, catch-ups between meetings, or quiet time with a book. Warm lighting, soft music, and no reason to hurry.',
+          'Order via Swiggy and Zomato with Kori @ Your Crib — tap, order, enjoy.',
         ],
       },
       {
-        heading: 'Operations Behind the Counter',
+        heading: 'Broader Hospitality Division',
         paragraphs: [
-          'Celeson applies HACCP principles to Kori\'s kitchen operations — food safety programmes, supplier verification, storage controls, and staff training aligned with hospitality best practice.',
-          'The same framework supports corporate catering and cloud kitchen management for business clients who need reliable, compliant food services at scale.',
-        ],
-      },
-      {
-        heading: 'Broader Hospitality Division Services',
-        paragraphs: [
-          'Beyond Kori, Celeson\'s Hospitality Division delivers restaurant operations, corporate catering, cloud kitchen management, food safety programmes, and hospitality consulting.',
-          'Whether you are planning an employee cafeteria programme, event catering, or evaluating F&B partners for compliance — Celeson brings 33+ years of operational leadership to the table.',
-        ],
-      },
-      {
-        heading: 'Visit or Order',
-        paragraphs: [
-          'Experience Kori in Bandra or order via Swiggy and Zomato. For corporate catering and hospitality consulting enquiries, contact Celeson India at +91 90762 17999 or info@celesongroup.com.',
+          'Beyond Kori, Celeson\'s Hospitality Division delivers restaurant operations, corporate catering, cloud kitchen management, food safety programmes, and hospitality consulting. Whether you are planning an employee cafeteria programme, event catering, or evaluating F&B partners for compliance — Celeson brings operational leadership with a family soul.',
+          'For corporate catering and hospitality consulting enquiries, contact Celeson India at +91 90762 17999 or info@celesongroup.com.',
         ],
       },
     ],
