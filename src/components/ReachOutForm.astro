@@ -1,25 +1,38 @@
 ---
 import type { BusinessRegion } from '../data/brief';
+import { contact, energyTransport } from '../data/content';
 
 interface Props {
   region: BusinessRegion;
 }
 const { region } = Astro.props;
 const regionLabel = region === 'uae' ? 'UAE & GCC' : 'India';
-const returnUrl = new URL(`/${region}?sent=1#contact`, Astro.url.origin).href;
+const topic = Astro.url.searchParams.get('topic');
+const isEnergyEnquiry = topic === 'energy-transport';
+const subject = isEnergyEnquiry
+  ? `Energy Transport enquiry — Celeson ${regionLabel}`
+  : `New enquiry — Celeson ${regionLabel}`;
+const returnUrl = new URL(`/${region}/contact?sent=1${isEnergyEnquiry ? '&topic=energy-transport' : ''}#contact`, Astro.url.origin).href;
 ---
 
+{isEnergyEnquiry && (
+  <div class="mb-5 rounded-xl border border-teal-200 bg-teal-50 px-4 py-3 text-sm text-teal-900">
+    Enquiring about <strong>{energyTransport.name}</strong> — we'll route your message to our {regionLabel} team.
+  </div>
+)}
+
 <form
-  action="https://formsubmit.co/info@celesongroup.com"
+  action={`https://formsubmit.co/${contact.email}`}
   method="POST"
   class="space-y-4"
-  id="reach-out-form"
+  id={`reach-out-form-${region}`}
 >
-  <input type="hidden" name="_subject" value={`New enquiry — Celeson ${regionLabel}`} />
+  <input type="hidden" name="_subject" value={subject} />
   <input type="hidden" name="_captcha" value="false" />
   <input type="hidden" name="_template" value="table" />
   <input type="hidden" name="_next" value={returnUrl} />
   <input type="hidden" name="Region" value={regionLabel} />
+  <input type="hidden" name="Enquiry type" value={isEnergyEnquiry ? 'Energy Transport' : 'General'} />
   <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
 
   <div class="grid sm:grid-cols-2 gap-4">
@@ -46,26 +59,35 @@ const returnUrl = new URL(`/${region}?sent=1#contact`, Astro.url.origin).href;
 
   <div>
     <label for={`message-${region}`} class="block text-xs font-medium text-slate-500 mb-1.5">How can we help? *</label>
-    <textarea id={`message-${region}`} name="Message" required rows="4" class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition resize-none" placeholder="Tell us about your logistics, safety, or facility needs…"></textarea>
+    <textarea
+      id={`message-${region}`}
+      name="Message"
+      required
+      rows="4"
+      class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition resize-none"
+      placeholder={isEnergyEnquiry ? 'Product type, volume, pickup & delivery locations…' : 'Tell us about your logistics, safety, or facility needs…'}
+    ></textarea>
   </div>
 
   <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-8 py-3.5 text-sm font-semibold text-white hover:bg-teal-500 transition-colors">
     Send Message
-    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
   </button>
 </form>
 
-<div id="form-success" class="hidden rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
+<div id={`form-success-${region}`} class="hidden rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
   <p class="text-green-800 font-semibold mb-1">Message sent!</p>
-  <p class="text-sm text-green-700">We'll get back to you at info@celesongroup.com shortly.</p>
+  <p class="text-sm text-green-700">We'll get back to you at {contact.email} shortly.</p>
 </div>
 
-<script>
+<script define:vars={{ region }}>
   if (new URLSearchParams(window.location.search).get('sent') === '1') {
-    const form = document.getElementById('reach-out-form');
-    const success = document.getElementById('form-success');
+    const form = document.getElementById(`reach-out-form-${region}`);
+    const success = document.getElementById(`form-success-${region}`);
     form?.classList.add('hidden');
     success?.classList.remove('hidden');
-    history.replaceState(null, '', window.location.pathname + '#contact');
+    const topic = new URLSearchParams(window.location.search).get('topic');
+    const cleanPath = window.location.pathname + (topic ? `?topic=${topic}` : '') + '#contact';
+    history.replaceState(null, '', cleanPath);
   }
 </script>

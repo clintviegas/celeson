@@ -18,7 +18,5 @@ export default defineConfig({
     '/insights': '/',
     '/uae/about': '/#about',
     '/india/about': '/#about',
-    '/uae/services': '/uae',
-    '/india/services': '/india',
   },
 });

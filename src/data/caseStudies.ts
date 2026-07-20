@@ -11,7 +11,15 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   // UAE & GCC
   {
-    slug: 'ivms-journey-management-gcc-fleet-risk',
+    slug: 'celeson-energy-transport-specialist-hydrocarbon-fleet',
+    title: 'Celeson Energy Transport — Specialist Hydrocarbon Tanker Fleet',
+    client: 'Celeson Energy Transport',
+    region: 'uae',
+    summary: 'On-call specialist tanker operations for hydrocarbons, petroleum, and petrochemical products — ADR-compliant fleet, trained drivers, and documented handover across the UAE and GCC.',
+    outcomes: ['Dedicated 2–3 tanker fleet operational', 'ADR-trained driver pool', '24/7 dispatch & journey support', 'Compliant product-handling documentation'],
+    serviceIds: ['energy-transport'],
+  },
+  {
     title: 'IVMS Control Room & Journey Management — GCC Oil & Gas',
     client: 'Major GCC Energy Operator',
     region: 'uae',
@@ -65,6 +73,15 @@ export const caseStudies: CaseStudy[] = [
     serviceIds: ['marine'],
   },
   // India
+  {
+    slug: 'celeson-energy-transport-specialist-hydrocarbon-fleet',
+    title: 'Celeson Energy Transport — Specialist Hydrocarbon Tanker Fleet',
+    client: 'Celeson Energy Transport',
+    region: 'india',
+    summary: 'On-call specialist tanker operations for hydrocarbons, petroleum, and petrochemical products — ADR-compliant fleet, trained drivers, and documented handover across India.',
+    outcomes: ['Dedicated 2–3 tanker fleet operational', 'ADR-trained driver pool', '24/7 dispatch & journey support', 'Compliant product-handling documentation'],
+    serviceIds: ['energy-transport'],
+  },
   {
     slug: 'reliance-driver-360-transport-platform-india',
     title: 'Reliance Transport Safety Platform — Driver 360° Digital Profiles',

@@ -10,6 +10,7 @@ export function getRegionNav(region: BusinessRegion) {
   const base = getRegionBase(region);
   return [
     { href: base, label: 'Home' },
+    { href: `${base}/services`, label: 'Services' },
     { href: `${base}/case-studies`, label: 'Case Studies' },
     { href: `${base}/insights`, label: 'Insights' },
     { href: `${base}/contact`, label: 'Contact' },

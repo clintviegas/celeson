@@ -5,7 +5,7 @@ export const tagline = 'Delivering Safety. Ensuring Compliance. Driving Excellen
 
 export const energyTransport = {
   name: 'Celeson Energy Transport',
-  eyebrow: 'Celeson Energy Transport · 30+ Years',
+  eyebrow: 'Celeson Energy Transport · 33+ Years',
   headline: 'Safe, Specialist Transport for Hydrocarbons & Petroleum Products',
   body:
     'With over 30 years of industry leadership, we specialize in the safe and efficient transportation of hydrocarbons, petroleum, gas, and petrochemical products, delivering world-class logistics solutions trusted by multinational energy companies.',
@@ -65,7 +65,7 @@ export const hero = {
     badge: 'Celeson UAE & GCC',
   },
   india: {
-    headline: 'Driving Safer Supply Chains Across India',
+    headline: 'Building a Zero-Accident Culture Across India',
     badge: 'Celeson India',
   },
 };

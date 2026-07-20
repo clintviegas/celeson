@@ -8,6 +8,7 @@ export interface ServiceCard {
   accent: string;
   iconColor: string;
   icon: string;
+  heroImage?: string;
   subsections?: { title: string; items: string[] }[];
 }
 
@@ -112,7 +113,7 @@ export const uaeRegionalOverview = {
 };
 
 export const indiaRegionalOverview = {
-  headline: 'Building a Zero-Accident Culture Through Intelligent Monitoring & Real-Time Risk Management',
+  headline: 'Building a Zero-Accident Culture Across India',
   intro: 'Celeson India delivers end-to-end driver lifecycle management, IVMS control room monitoring, dynamic risk scoring, and road safety programmes for industrial and logistics operators nationwide.',
   categories: [
     { title: 'Supply Chain Consulting', items: ['Network Design', 'Distribution Strategy', 'Demand Planning', 'Inventory Optimization', 'Logistics Assessments'] },
@@ -125,6 +126,23 @@ export const indiaRegionalOverview = {
 };
 
 export const uaeServices: ServiceCard[] = [
+  {
+    id: 'energy-transport',
+    title: 'Celeson Energy Transport',
+    desc: 'Specialist road tanker service for hydrocarbons, petroleum, gas, and petrochemical products — a dedicated fleet with ADR-trained drivers serving the UAE, GCC, and cross-border corridors.',
+    items: [
+      'Crude & refined petroleum',
+      'Natural gas / LPG (where licensed)',
+      'Petrochemicals & hydrocarbon derivatives',
+      'Dedicated 2–3 specialist tanker fleet',
+      'ADR-compliant vehicles & highly trained drivers',
+      '24/7 dispatch and operations support',
+    ],
+    accent: 'from-amber-500/20 to-orange-600/5',
+    iconColor: 'text-amber-500',
+    icon: truckIcon,
+    heroImage: '/images/celeson-energy-tanker.jpeg',
+  },
   {
     id: 'supply-chain',
     title: 'Logistics & Supply Chain',
@@ -170,6 +188,23 @@ export const uaeServices: ServiceCard[] = [
 ];
 
 export const indiaServices: ServiceCard[] = [
+  {
+    id: 'energy-transport',
+    title: 'Celeson Energy Transport',
+    desc: 'Specialist road tanker service for hydrocarbons, petroleum, gas, and petrochemical products — a dedicated fleet with ADR-trained drivers across India and key industrial corridors.',
+    items: [
+      'Crude & refined petroleum',
+      'Natural gas / LPG (where licensed)',
+      'Petrochemicals & hydrocarbon derivatives',
+      'Dedicated 2–3 specialist tanker fleet',
+      'ADR-compliant vehicles & highly trained drivers',
+      '24/7 dispatch and operations support',
+    ],
+    accent: 'from-amber-500/20 to-orange-600/5',
+    iconColor: 'text-amber-500',
+    icon: truckIcon,
+    heroImage: '/images/celeson-energy-tanker.jpeg',
+  },
   {
     id: 'supply-chain',
     title: 'Supply Chain Consulting',

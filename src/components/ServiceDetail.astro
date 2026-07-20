@@ -27,6 +27,19 @@ const base = `/${region}`;
       <p class="text-lg text-slate-600 leading-relaxed mb-8">{service.desc}</p>
     </div>
 
+    {service.heroImage && (
+      <div class="mb-10 rounded-2xl overflow-hidden border border-slate-200 shadow-lg max-w-4xl">
+        <img
+          src={service.heroImage}
+          alt={service.title}
+          class="w-full h-auto object-cover max-h-[420px]"
+          loading="eager"
+          width="1200"
+          height="675"
+        />
+      </div>
+    )}
+
     <div class="grid lg:grid-cols-3 gap-10">
       <div class="lg:col-span-2">
         {service.subsections ? (

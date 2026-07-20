@@ -742,14 +742,14 @@ export const insights: InsightArticle[] = [
     slug: 'kori-cafe-hospitality-india',
     title: 'Kori Café — A Family Legacy Brewed Into Every Cup',
     description:
-      'Celeson Enterprises Private Limited\'s hospitality flagship in Bandra West — built on 25+ years of family bakery heritage, Coorg coffee roots, wellness-focused F&B, and the same operational discipline that drives Celeson\'s safety and logistics work.',
+      'Celeson Group\'s hospitality flagship in Bandra West — built on 25+ years of family bakery heritage, Coorg coffee roots, wellness-focused F&B, and the same operational discipline that drives Celeson\'s safety and logistics work.',
     category: 'Case Study',
     region: 'india',
     serviceIds: ['hospitality'],
     date: '2025-04-15',
     readTime: '9 min read',
     image: '/images/kori-cafe-exterior.png',
-    keywords: ['Kori Café', 'hospitality India', 'HACCP', 'Bandra café', 'corporate catering', 'Celeson Enterprises', 'Made in India coffee equipment', 'wellness café Mumbai'],
+    keywords: ['Kori Café', 'hospitality India', 'HACCP', 'Bandra café', 'corporate catering', 'Celeson Group', 'Made in India coffee equipment', 'wellness café Mumbai'],
     content: [
       {
         paragraphs: [
@@ -760,7 +760,7 @@ export const insights: InsightArticle[] = [
       {
         heading: 'The Family Behind the Brand',
         paragraphs: [
-          'Celeson Enterprises is a family-inspired brand built on care, innovation, and quality. The founding family brings together expertise in supply chain, investment banking, marketing, and over two decades of authentic food traditions. That combination — operational rigour meets family warmth — is what makes Kori different from a typical café.',
+          'Celeson Group is a family-inspired brand built on care, innovation, and quality. The founding family brings together expertise in supply chain, investment banking, marketing, and over two decades of authentic food traditions. That combination — operational rigour meets family warmth — is what makes Kori different from a typical café.',
           'The vision: to build a trusted ecosystem of innovative ventures that celebrate Indian craftsmanship, deliver world-class experiences, and create meaningful social impact.',
         ],
       },
@@ -783,7 +783,7 @@ export const insights: InsightArticle[] = [
         paragraphs: [
           'Kori introduces authentic, wellness-focused food and beverage offerings — ready-to-drink beverages with functional ingredients alongside an all-day menu. Coffee is sourced from Coorg estates, handpicked for bold aroma and smooth flavour.',
           'Signature offerings include Berry Almond, Vietnamese Cold Brew, Spanish Latte, Iced Matcha, Strawberry Matcha, Cajun Spiced Chicken Schnitzel, and the Fiery Chicken Burger.',
-          'Beyond the cup, Celeson Enterprises is working to design and manufacture cost-effective, Made-in-India coffee equipment — reducing India\'s dependence on costly imported machines. Training academies are planned to bridge the skill and professionalism gaps that hold the hospitality industry back.',
+          'Beyond the cup, Celeson Group is working to design and manufacture cost-effective, Made-in-India coffee equipment — reducing India\'s dependence on costly imported machines. Training academies are planned to bridge the skill and professionalism gaps that hold the hospitality industry back.',
         ],
       },
       {
@@ -798,6 +798,79 @@ export const insights: InsightArticle[] = [
         paragraphs: [
           'Beyond Kori, Celeson\'s Hospitality Division delivers restaurant operations, corporate catering, cloud kitchen management, food safety programmes, and hospitality consulting. Whether you are planning an employee cafeteria programme, event catering, or evaluating F&B partners for compliance — Celeson brings operational leadership with a family soul.',
           'For corporate catering and hospitality consulting enquiries, contact Celeson India at +91 90762 17999 or info@celesongroup.com.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'celeson-energy-transport-specialist-hydrocarbon-fleet',
+    title: 'Celeson Energy Transport: Specialist Hydrocarbon & Petroleum Tanker Operations in India and the GCC',
+    description:
+      'How Celeson Energy Transport delivers safe, compliant road tanker logistics for hydrocarbons, petroleum, gas, and petrochemical products — with a dedicated fleet, ADR-trained drivers, and 33+ years of energy-sector experience across India and the UAE.',
+    category: 'Case Study',
+    region: 'both',
+    date: '2026-07-20',
+    readTime: '10 min read',
+    image: '/images/celeson-energy-tanker.jpeg',
+    keywords: [
+      'hydrocarbon tanker transport',
+      'petroleum road tanker India',
+      'UAE oil gas logistics',
+      'ADR compliant tanker fleet',
+      'petrochemical transport GCC',
+      'Celeson Energy Transport',
+      'specialist tanker service',
+      'energy logistics India UAE',
+    ],
+    serviceIds: ['energy-transport'],
+    content: [
+      {
+        paragraphs: [
+          'Moving hydrocarbons, refined petroleum, gas, and petrochemical products by road demands more than a vehicle and a driver. It requires licensed capability, disciplined journey management, documented handover, and operators who understand that a single deviation can affect people, assets, and the environment.',
+          'Celeson Energy Transport is Celeson Group\'s specialist road tanker division — built on 33+ years of leadership in transport safety and energy-sector logistics across India and the GCC. With a dedicated fleet of 2–3 ADR-compliant tankers and highly trained drivers, we provide on-call specialist transport for multinational energy companies, refineries, terminals, and industrial customers who need reliability without compromising compliance.',
+        ],
+      },
+      {
+        heading: 'What we transport',
+        paragraphs: [
+          'Our core product scope covers crude and refined petroleum products, natural gas and LPG where licensed, petrochemicals, and hydrocarbon derivatives. Each load is assessed for routing, product compatibility, regulatory requirements, and client-specific operator standards before dispatch.',
+          'Whether the movement supports refinery supply chains, terminal transfers, industrial feedstock delivery, or project cargo in the energy sector, Celeson Energy Transport applies the same operational discipline that underpins our wider Goal Zero safety culture — Predict. Prevent. Protect.',
+        ],
+      },
+      {
+        heading: 'A dedicated fleet, not a volume carrier',
+        paragraphs: [
+          'Celeson Energy Transport is intentionally structured as a specialist partner — not a mass fleet operator. Our dedicated 2–3 tanker model allows focused maintenance, consistent driver assignment, and direct accountability on every journey.',
+          'For clients, that means faster mobilisation, clearer communication, and a team that knows your routes, your documentation standards, and your escalation paths. It is the difference between hiring a truck and engaging a transport partner.',
+        ],
+      },
+      {
+        heading: 'How a typical engagement works',
+        paragraphs: [
+          'Step 1 — Tell us your load: product type, volume, pickup and delivery points, and any client or terminal-specific requirements.',
+          'Step 2 — We dispatch a specialist tanker from our dedicated fleet with an ADR-trained driver, verified documentation, and a journey plan aligned to route risk.',
+          'Step 3 — Safe, compliant delivery with tracked progress, documented handover, and 24/7 operations support throughout the movement.',
+        ],
+      },
+      {
+        heading: 'Safety, compliance, and trust',
+        paragraphs: [
+          'Every movement is underpinned by ADR-aligned vehicle standards, driver competency programmes, preventive maintenance, and journey management practices drawn from Celeson\'s wider transport safety expertise — including ISO 39001-informed frameworks, contractor governance, and IVMS-capable monitoring where required.',
+          'Our commitment spans Safety, Compliance, Quality, Reliability, and Sustainability — not as marketing language, but as operating principles reviewed before dispatch and after delivery.',
+        ],
+      },
+      {
+        heading: 'Serving India and the GCC',
+        paragraphs: [
+          'Celeson Energy Transport supports customers across India and the UAE & GCC, integrating with Celeson Group\'s regional teams for enquiries, dispatch coordination, and escalation. India operations connect to our Mumbai head office and national logistics network; UAE & GCC movements are supported through our regional operations serving Dubai, Abu Dhabi, and wider Gulf corridors.',
+          'Enquiries can be routed through Celeson India (+91 90762 17999) or Celeson UAE & GCC (+971 50 325 9935), or via info@celesongroup.com with product and route details.',
+        ],
+      },
+      {
+        heading: 'Why clients choose Celeson Energy Transport',
+        paragraphs: [
+          'Multinational energy operators and industrial customers choose Celeson when they need a responsive specialist — a team that combines tanker capability with Celeson\'s broader safety and logistics credentials. We are not replacing your logistics partner; we are the dedicated tanker resource you call when the load, the route, or the compliance bar requires specialist handling.',
+          'To discuss hydrocarbon, petroleum, or petrochemical transport requirements in India or the GCC, contact Celeson Energy Transport through your regional Celeson team or visit celesongroup.com.',
         ],
       },
     ],

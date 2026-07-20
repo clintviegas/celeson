@@ -6,7 +6,7 @@ const navLinks = [
   { href: '#energy-transport', label: 'Energy Transport' },
   { href: '#what-we-do', label: 'What we do' },
   { href: '#regions', label: 'Regions' },
-  { href: '#proof', label: 'Case Study' },
+  { href: '#proof', label: 'Case Studies' },
   { href: '#about', label: 'About' },
 ];
 ---
@@ -25,8 +25,8 @@ const navLinks = [
       </nav>
 
       <div class="flex items-center gap-2">
-        <a href="#regions" class="hidden sm:inline-flex rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 transition-colors shadow-lg shadow-teal-900/30 whitespace-nowrap">
-          Choose region
+        <a href="#energy-transport" class="hidden sm:inline-flex rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 transition-colors shadow-lg shadow-teal-900/30 whitespace-nowrap">
+          Enquire
         </a>
         <button id="gateway-menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10" aria-label="Open menu">
           <span class="block h-0.5 w-5 bg-white transition-transform duration-200" id="gateway-bar1"></span>
@@ -42,8 +42,8 @@ const navLinks = [
       {navLinks.map(link => (
         <a href={link.href} class="gateway-mobile-link text-base py-3 border-b border-white/5 text-slate-300 hover:text-teal-400 transition-colors">{link.label}</a>
       ))}
-      <a href="#regions" class="gateway-mobile-link mt-3 inline-flex items-center justify-center rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white hover:bg-teal-500 transition-colors">
-        Choose region
+      <a href="#energy-transport" class="gateway-mobile-link mt-3 inline-flex items-center justify-center rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white hover:bg-teal-500 transition-colors">
+        Enquire
       </a>
     </div>
   </div>
