@@ -1,0 +1,63 @@
+---
+import { energyTransport } from '../data/content';
+---
+
+<section id="energy-transport" class="relative py-14 md:py-18 scroll-mt-24 bg-[#071018] border-t border-white/10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+      <p class="text-xs font-semibold text-teal-400 uppercase tracking-widest mb-3">What we transport</p>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+        Specialist road tanker service for energy products
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+        A Porter-style model — tell us what you need, we dispatch from our dedicated fleet of 2–3 specialist tankers.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 md:mb-14">
+      {energyTransport.products.map((product) => (
+        <span class="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs sm:text-sm font-medium text-slate-300">
+          {product}
+        </span>
+      ))}
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 lg:gap-6 mb-12 md:mb-14">
+      {energyTransport.steps.map((step) => (
+        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7 hover:border-teal-500/25 transition-colors">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-600/20 text-teal-400 text-sm font-bold mb-4">{step.num}</span>
+          <h3 class="text-base font-bold text-white mb-2">{step.title}</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8 mb-10">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+        {energyTransport.trustBadges.map((badge) => (
+          <div class="text-center p-3 rounded-xl bg-white/[0.02] border border-white/5">
+            <p class="text-sm font-bold text-teal-400 mb-0.5">{badge.title}</p>
+            <p class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wide">{badge.subtitle}</p>
+          </div>
+        ))}
+      </div>
+      <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        {energyTransport.trustBullets.map((item) => (
+          <li class="flex items-center gap-2 text-xs sm:text-sm text-slate-400">
+            <svg class="h-3.5 w-3.5 text-teal-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="/india/contact" class="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-7 py-3.5 text-sm font-semibold text-white hover:bg-teal-500 transition-colors shadow-lg shadow-teal-900/30">
+        Enquire — India
+      </a>
+      <a href="/uae/contact" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
+        Enquire — UAE & GCC
+      </a>
+    </div>
+  </div>
+</section>

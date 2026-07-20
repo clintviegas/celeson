@@ -2,27 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import GatewayHeader from '../components/GatewayHeader.astro';
 import GatewayHero from '../components/GatewayHero.astro';
+import GatewayEnergyTransport from '../components/GatewayEnergyTransport.astro';
 import GatewayWhatWeDo from '../components/GatewayWhatWeDo.astro';
 import GatewayLanding from '../components/GatewayLanding.astro';
 import GatewayProof from '../components/GatewayProof.astro';
+import ClientLogoMarquee from '../components/ClientLogoMarquee.astro';
 import GatewayAbout from '../components/GatewayAbout.astro';
 import TransportPillars from '../components/TransportPillars.astro';
-import { companyName } from '../data/content';
+import GatewayFooter from '../components/GatewayFooter.astro';
+import { energyTransport } from '../data/content';
 ---
 
 <Layout
-  title={`${companyName} | Safety, Logistics & Operational Excellence`}
-  description="Celeson Enterprise Pvt Ltd — transport safety, supply chain, industrial services, and Kori Café hospitality across India and the GCC."
+  title={`${energyTransport.name} | Hydrocarbon & Petroleum Tanker Logistics`}
+  description={`${energyTransport.name} — specialist tanker transport for hydrocarbons, petroleum, gas, and petrochemical products. 30+ years trusted by multinational energy companies across India and the GCC.`}
   region="home"
   canonicalURL="https://celesongroup.com"
 >
   <GatewayHeader />
   <main class="bg-[#0b1929]">
     <GatewayHero />
+    <GatewayEnergyTransport />
     <GatewayWhatWeDo />
     <GatewayLanding />
     <GatewayProof />
+    <ClientLogoMarquee region="all" />
     <GatewayAbout />
-    <TransportPillars />
+    <TransportPillars theme="gateway" />
   </main>
+  <GatewayFooter />
 </Layout>

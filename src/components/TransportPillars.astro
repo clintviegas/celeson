@@ -1,14 +1,20 @@
 ---
 import { transportPillars } from '../data/content';
 
+interface Props {
+  theme?: 'default' | 'gateway';
+}
+const { theme = 'default' } = Astro.props;
+
 const colors = ['text-teal-400', 'text-blue-400', 'text-purple-400', 'text-amber-400'];
 const borders = ['border-teal-500/30', 'border-blue-500/30', 'border-purple-500/30', 'border-amber-500/30'];
+const eyebrowClass = theme === 'gateway' ? 'text-brand-slate' : 'text-teal-600';
 ---
 
 <section id="pillars" class="py-16 md:py-24 bg-white">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-12 reveal-up">
-      <p class="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-2">Our Four Transportation Pillars</p>
+      <p class={`text-xs font-semibold ${eyebrowClass} uppercase tracking-widest mb-2`}>Our Four Transportation Pillars</p>
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
         A Framework for Transport Excellence
       </h2>

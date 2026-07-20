@@ -40,6 +40,16 @@ export function getClientLogos(region: 'uae' | 'india'): ClientLogo[] {
   return list.filter((c) => c.logo);
 }
 
+export function getAllClientLogos(): ClientLogo[] {
+  const seen = new Set<string>();
+  const combined = [...uaeClientLogos, ...indiaClientLogos].filter((c) => {
+    if (!c.logo || seen.has(c.logo)) return false;
+    seen.add(c.logo);
+    return true;
+  });
+  return combined;
+}
+
 export const industries: IndustryItem[] = [
   {
     name: 'Oil & Gas',

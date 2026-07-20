@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { companyName } from '../data/content';
 
 interface Props {
   title: string;
@@ -28,7 +29,7 @@ const siteURL = 'https://celesongroup.com';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL ?? siteURL} />
-    <meta property="og:site_name" content="Celeson Enterprise Pvt Ltd" />
+    <meta property="og:site_name" content={companyName} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,13 +47,13 @@ const siteURL = 'https://celesongroup.com';
             "datePublished": article.date,
             "image": `https://celesongroup.com${article.image}`,
             "url": `https://celesongroup.com/insights/${article.slug}`,
-            "author": { "@type": "Organization", "name": "Celeson Enterprise Pvt Ltd" },
-            "publisher": { "@type": "Organization", "name": "Celeson Enterprise Pvt Ltd", "url": siteURL },
+            "author": { "@type": "Organization", "name": companyName },
+            "publisher": { "@type": "Organization", "name": companyName, "url": siteURL },
           }
         : {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "Celeson Enterprise Pvt Ltd",
+            "name": companyName,
             "description": description,
             "url": siteURL,
             "areaServed": region === 'uae' ? "United Arab Emirates" : region === 'india' ? "India" : ["India", "United Arab Emirates"],
@@ -71,6 +72,14 @@ const siteURL = 'https://celesongroup.com';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-white font-sans text-slate-800">
+    <!-- Under Construction Banner -->
+    <div style="background:#1e293b;color:#f8fafc;text-align:center;padding:10px 16px;font-size:13px;font-family:Inter,sans-serif;letter-spacing:0.02em;position:relative;z-index:9999;">
+      <span style="display:inline-flex;align-items:center;gap:8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <strong>Preview Only</strong> — This website is currently under construction and not yet live. Content and design are subject to change.
+      </span>
+    </div>
+
     <slot />
 
     <!-- Scroll-reveal: runs after full DOM is painted -->

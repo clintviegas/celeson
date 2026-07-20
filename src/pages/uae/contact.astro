@@ -3,6 +3,7 @@ import RegionalLayout from '../../components/RegionalLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import RegionalContact from '../../components/RegionalContact.astro';
 import { getRegionLabel } from '../../data/regionNav';
+import { companyName } from '../../data/content';
 
 const region = 'uae' as const;
 const regionLabel = getRegionLabel(region);
@@ -11,7 +12,7 @@ const regionLabel = getRegionLabel(region);
 <RegionalLayout
   region={region}
   current="/uae/contact"
-  title={`Contact | Celeson Enterprise Pvt Ltd — ${regionLabel}`}
+  title={`Contact | ${companyName} — ${regionLabel}`}
   description={`Contact Celeson ${regionLabel} — call, WhatsApp, or email info@celesongroup.com.`}
   canonicalURL="https://celesongroup.com/uae/contact"
 >

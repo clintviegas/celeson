@@ -8,6 +8,7 @@
   --color-navy-900: #0b1929;
   --color-navy-800: #0f2235;
   --color-navy-700: #143047;
+  --color-brand-slate: #4B5961;
   --font-sans: 'Inter', system-ui, sans-serif;
 }
 
@@ -29,6 +30,18 @@
 }
 
 @layer utilities {
+  .logo-badge {
+    @apply bg-white rounded-lg px-3 py-1.5 shadow-sm;
+  }
+  .logo-badge--hero {
+    @apply px-5 py-3 rounded-xl shadow-md;
+  }
+  .logo-badge--neutral {
+    @apply bg-[#143047]/70 border border-slate-600/35 rounded-xl px-5 py-3 backdrop-blur-sm;
+  }
+  .logo-badge--neutral-sm {
+    @apply bg-[#143047]/70 border border-slate-600/35 rounded-lg px-3 py-1.5 backdrop-blur-sm;
+  }
   .text-balance {
     text-wrap: balance;
   }

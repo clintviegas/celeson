@@ -1,6 +1,54 @@
-export const companyName = 'Celeson Enterprise Pvt Ltd';
+export const companyName = 'Celeson Group';
 export const companyShort = 'Celeson';
+export const logoSrc = '/Logo.svg';
 export const tagline = 'Delivering Safety. Ensuring Compliance. Driving Excellence.';
+
+export const energyTransport = {
+  name: 'Celeson Energy Transport',
+  eyebrow: 'Celeson Energy Transport · 30+ Years',
+  headline: 'Safe, Specialist Transport for Hydrocarbons & Petroleum Products',
+  body:
+    'With over 30 years of industry leadership, we specialize in the safe and efficient transportation of hydrocarbons, petroleum, gas, and petrochemical products, delivering world-class logistics solutions trusted by multinational energy companies.',
+  fleetNote: 'Dedicated tanker fleet — 2–3 ADR-compliant trucks, ready when you need us.',
+  tagline: 'Safe Transport · Reliable Service · Energizing Tomorrow',
+  image: '/images/celeson-energy-tanker.jpeg',
+  products: [
+    'Crude & refined petroleum',
+    'Natural gas / LPG (where licensed)',
+    'Petrochemicals',
+    'Hydrocarbon derivatives',
+  ],
+  steps: [
+    {
+      num: '1',
+      title: 'Tell us your load',
+      desc: 'Product type, volume, pickup & delivery points',
+    },
+    {
+      num: '2',
+      title: 'We dispatch a specialist tanker',
+      desc: 'From our dedicated 2–3 truck fleet — ADR-trained drivers',
+    },
+    {
+      num: '3',
+      title: 'Safe, compliant delivery',
+      desc: 'Tracked journey, documented handover, 24/7 ops support',
+    },
+  ],
+  trustBadges: [
+    { title: 'Safety', subtitle: 'Our Priority' },
+    { title: 'Compliance', subtitle: 'Our Commitment' },
+    { title: 'Quality', subtitle: 'Our Standard' },
+    { title: 'Reliability', subtitle: 'You Can Trust' },
+    { title: 'Sustainability', subtitle: 'Our Responsibility' },
+  ],
+  trustBullets: [
+    'ADR Compliant',
+    'Highly Trained Drivers',
+    'Well Maintained Fleet',
+    '24/7 Operations Support',
+  ],
+};
 
 export const philosophy = {
   headline: 'Predict. Prevent. Protect.',
@@ -9,7 +57,7 @@ export const philosophy = {
 
 export const hero = {
   sharedSubline:
-    'Celeson Enterprise Pvt Ltd helps organisations across India and the GCC run safer logistics, stronger supply chains, and compliant operations — from fleet IVMS and driver management to industrial HSE and hospitality.',
+    'Celeson Group helps organisations across India and the GCC run safer logistics, stronger supply chains, and compliant operations — from fleet IVMS and driver management to industrial HSE and hospitality.',
   gatewayExplain:
     'Start by choosing your region below. Each site is tailored to how Celeson serves that market — same company, focused local expertise.',
   uae: {
@@ -60,7 +108,7 @@ export const valuePillars = [
 ];
 
 export const whoWeAre =
-  'Celeson Enterprise Pvt Ltd is a diversified organisation founded by Arundhan Alphones — providing transport safety, supply chain consulting, facility management, industrial services, and hospitality (including Kori Café in Mumbai). We combine 33+ years of field leadership with international best practice.';
+  'Celeson Group is a diversified organisation founded by Arundhan Alphones — providing transport safety, supply chain consulting, facility management, industrial services, and hospitality (including Kori Café in Mumbai). We combine 33+ years of field leadership with international best practice.';
 
 export const businessVerticals = [
   {

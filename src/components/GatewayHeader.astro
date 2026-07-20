@@ -1,15 +1,79 @@
 ---
 import BrandLogo from './BrandLogo.astro';
 import { tagline } from '../data/content';
+
+const navLinks = [
+  { href: '#energy-transport', label: 'Energy Transport' },
+  { href: '#what-we-do', label: 'What we do' },
+  { href: '#regions', label: 'Regions' },
+  { href: '#proof', label: 'Case Study' },
+  { href: '#about', label: 'About' },
+];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#0b1929]/85 backdrop-blur-xl border-b border-white/[0.08]">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0b1929]/85 backdrop-blur-xl border-b border-white/[0.08]" id="gateway-header">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-[4.25rem] items-center justify-between gap-4">
-      <BrandLogo href="/" size="md" subtitle={tagline.split('.')[0]} />
-      <a href="#what-we-do" class="hidden sm:inline-flex text-xs font-medium text-slate-400 hover:text-teal-400 border border-white/10 rounded-full px-4 py-2 transition-colors">
-        How we work ↓
+    <div class="flex h-[4.25rem] items-center justify-between gap-3">
+      <BrandLogo href="/" variant="official" size="md" showText={false} subtitle={tagline.split('.')[0]} idSuffix="gateway" />
+
+      <nav class="hidden lg:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-sm text-slate-300 hover:text-teal-400 transition-colors whitespace-nowrap">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#regions" class="hidden sm:inline-flex rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-500 transition-colors shadow-lg shadow-teal-900/30 whitespace-nowrap">
+          Choose region
+        </a>
+        <button id="gateway-menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10" aria-label="Open menu">
+          <span class="block h-0.5 w-5 bg-white transition-transform duration-200" id="gateway-bar1"></span>
+          <span class="block h-0.5 w-5 bg-white transition-opacity duration-200" id="gateway-bar2"></span>
+          <span class="block h-0.5 w-5 bg-white transition-transform duration-200" id="gateway-bar3"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="gateway-mobile-menu" class="hidden lg:hidden bg-[#0b1929]/98 backdrop-blur-md border-t border-white/10 max-h-[85vh] overflow-y-auto">
+    <div class="px-6 py-5 flex flex-col gap-1">
+      {navLinks.map(link => (
+        <a href={link.href} class="gateway-mobile-link text-base py-3 border-b border-white/5 text-slate-300 hover:text-teal-400 transition-colors">{link.label}</a>
+      ))}
+      <a href="#regions" class="gateway-mobile-link mt-3 inline-flex items-center justify-center rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white hover:bg-teal-500 transition-colors">
+        Choose region
       </a>
     </div>
   </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('gateway-menu-btn');
+  const mobileMenu = document.getElementById('gateway-mobile-menu');
+  const bar1 = document.getElementById('gateway-bar1');
+  const bar2 = document.getElementById('gateway-bar2');
+  const bar3 = document.getElementById('gateway-bar3');
+  let open = false;
+
+  menuBtn?.addEventListener('click', () => {
+    open = !open;
+    mobileMenu?.classList.toggle('hidden', !open);
+    bar1?.classList.toggle('rotate-45', open);
+    bar1?.classList.toggle('translate-y-2', open);
+    bar2?.classList.toggle('opacity-0', open);
+    bar3?.classList.toggle('-rotate-45', open);
+    bar3?.classList.toggle('-translate-y-2', open);
+  });
+
+  document.querySelectorAll('.gateway-mobile-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      open = false;
+      mobileMenu?.classList.add('hidden');
+      bar1?.classList.remove('rotate-45', 'translate-y-2');
+      bar2?.classList.remove('opacity-0');
+      bar3?.classList.remove('-rotate-45', '-translate-y-2');
+    });
+  });
+</script>

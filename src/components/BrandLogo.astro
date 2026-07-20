@@ -1,4 +1,6 @@
 ---
+import { companyName, logoSrc } from '../data/content';
+
 interface Props {
   href?: string;
   size?: 'sm' | 'md' | 'lg';
@@ -7,18 +9,55 @@ interface Props {
   subtitleHref?: string;
   class?: string;
   idSuffix?: string;
+  variant?: 'default' | 'official';
 }
-const { href, size = 'md', showText = true, subtitle, subtitleHref, class: className = '', idSuffix = 'logo' } = Astro.props;
+const {
+  href,
+  size = 'md',
+  showText = true,
+  subtitle,
+  subtitleHref,
+  class: className = '',
+  idSuffix = 'logo',
+  variant = 'default',
+} = Astro.props;
 
 const iconSizes = { sm: 36, md: 40, lg: 48 };
 const iconPx = iconSizes[size];
 const gradId = `brandGrad-${idSuffix}`;
-const splitLinks = Boolean(href && subtitleHref);
+const splitLinks = Boolean(href && subtitleHref && variant === 'default');
+
+const officialHeights = { sm: 'h-8', md: 'h-10', lg: 'h-16' };
+const officialHeight = officialHeights[size];
+const logoImgClass = `${officialHeight} w-auto object-contain group-hover:scale-[1.02] transition-transform duration-300`;
+const logoLoading = size === 'lg' ? 'eager' : 'lazy';
 ---
 
-{splitLinks ? (
+{variant === 'official' ? (
+  href ? (
+    <a href={href} class={`inline-flex items-center gap-3 group flex-shrink-0 min-w-0 ${className}`} aria-label={showText ? undefined : 'Celeson'}>
+      <img src={logoSrc} alt="Celeson" class={logoImgClass} loading={logoLoading} width="200" height="59" />
+      {showText && (
+        <div class="leading-tight min-w-0 hidden sm:block">
+          <div class="text-[10px] sm:text-xs text-slate-400 group-hover:text-teal-400 transition-colors truncate">{companyName}</div>
+          {subtitle && <div class="text-[10px] text-slate-500 truncate">{subtitle}</div>}
+        </div>
+      )}
+    </a>
+  ) : (
+    <div class={`inline-flex items-center gap-3 flex-shrink-0 min-w-0 ${className}`}>
+      <img src={logoSrc} alt="Celeson" class={`${officialHeight} w-auto object-contain`} loading={logoLoading} width="200" height="59" />
+      {showText && (
+        <div class="leading-tight min-w-0">
+          <div class="text-[10px] sm:text-xs text-slate-400 truncate">{companyName}</div>
+          {subtitle && <div class="text-[10px] text-slate-500 truncate">{subtitle}</div>}
+        </div>
+      )}
+    </div>
+  )
+) : splitLinks ? (
   <div class={`inline-flex items-center gap-3 flex-shrink-0 min-w-0 ${className}`}>
-    <a href={href} class="group flex-shrink-0" aria-label="Celeson Enterprise Pvt Ltd — choose region">
+    <a href={href} class="group flex-shrink-0" aria-label={`${companyName} — choose region`}>
       <svg width={iconPx} height={iconPx} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 drop-shadow-sm group-hover:scale-[1.02] transition-transform duration-300" aria-hidden="true">
         <defs><linearGradient id={gradId} x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs>
         <rect width="40" height="40" rx="10" fill={`url(#${gradId})`}/>
@@ -30,7 +69,7 @@ const splitLinks = Boolean(href && subtitleHref);
     {showText && (
       <div class="leading-tight min-w-0">
         <a href={href} class="block text-xs sm:text-sm md:text-[15px] font-bold text-white hover:text-teal-300 transition-colors tracking-tight leading-snug truncate">
-          Celeson Enterprise Pvt Ltd
+          {companyName}
         </a>
         {subtitle && (
           <a href={subtitleHref} class="block text-[10px] sm:text-[11px] text-slate-400 hover:text-teal-400 truncate transition-colors">
@@ -42,7 +81,7 @@ const splitLinks = Boolean(href && subtitleHref);
   </div>
 ) : (
   href ? (
-    <a href={href} class={`inline-flex items-center gap-3 group flex-shrink-0 ${className}`} aria-label={showText ? undefined : 'Celeson Enterprise Pvt Ltd'}>
+    <a href={href} class={`inline-flex items-center gap-3 group flex-shrink-0 ${className}`} aria-label={showText ? undefined : companyName}>
       <svg width={iconPx} height={iconPx} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 drop-shadow-sm group-hover:scale-[1.02] transition-transform duration-300" aria-hidden="true">
         <defs><linearGradient id={gradId} x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2dd4bf"/><stop offset="1" stop-color="#0d9488"/></linearGradient></defs>
         <rect width="40" height="40" rx="10" fill={`url(#${gradId})`}/>
@@ -52,7 +91,7 @@ const splitLinks = Boolean(href && subtitleHref);
       </svg>
       {showText && (
         <div class="leading-tight min-w-0">
-          <div class="text-xs sm:text-sm md:text-[15px] font-bold text-white group-hover:text-teal-300 transition-colors tracking-tight leading-snug">Celeson Enterprise Pvt Ltd</div>
+          <div class="text-xs sm:text-sm md:text-[15px] font-bold text-white group-hover:text-teal-300 transition-colors tracking-tight leading-snug">{companyName}</div>
           {subtitle && <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">{subtitle}</div>}
         </div>
       )}
@@ -68,7 +107,7 @@ const splitLinks = Boolean(href && subtitleHref);
       </svg>
       {showText && (
         <div class="leading-tight min-w-0">
-          <div class="text-xs sm:text-sm md:text-[15px] font-bold text-white tracking-tight leading-snug">Celeson Enterprise Pvt Ltd</div>
+          <div class="text-xs sm:text-sm md:text-[15px] font-bold text-white tracking-tight leading-snug">{companyName}</div>
           {subtitle && <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">{subtitle}</div>}
         </div>
       )}

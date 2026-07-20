@@ -753,7 +753,7 @@ export const insights: InsightArticle[] = [
     content: [
       {
         paragraphs: [
-          'Kori Café is the hospitality flagship of Celeson Enterprise Pvt Ltd — a forest-green storefront on Bandra West\'s 30th Road, blending homestyle bakery traditions with Coorg coffee heritage. Wellness, craft, and community come together under one roof.',
+          'Kori Café is the hospitality flagship of Celeson Group — a forest-green storefront on Bandra West\'s 30th Road, blending homestyle bakery traditions with Coorg coffee heritage. Wellness, craft, and community come together under one roof.',
           'Visit Kori at kori.cafe — open Wednesday to Monday, 7:30am to 10:30pm, just off Linking Road in Bandra West.',
         ],
       },
