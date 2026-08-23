@@ -1,0 +1,18 @@
+# build output / generated (Vercel rebuilds these remotely)
+dist/
+.astro/
+node_modules/
+
+# environment
+.env
+.env.production
+
+# local tooling
+.vercel/
+.DS_Store
+.idea/
+.claude/
+
+# client reference materials — must never be published.
+# NOTE: this sits under public/, which Astro copies verbatim into dist/.
+public/client_brief/
