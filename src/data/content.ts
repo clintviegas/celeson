@@ -6,12 +6,13 @@ export const tagline = 'Delivering Safety. Ensuring Compliance. Driving Excellen
 export const energyTransport = {
   name: 'Celeson Energy Transport',
   eyebrow: 'Celeson Energy Transport · 33+ Years',
-  headline: 'Safe, Specialist Transport for Hydrocarbons & Petroleum Products',
+  headline: 'Certified Hazardous Materials & Bulk Liquid Logistics Across India & the GCC',
   body:
     'With over 30 years of industry leadership, we specialize in the safe and efficient transportation of hydrocarbons, petroleum, gas, and petrochemical products, delivering world-class logistics solutions trusted by multinational energy companies.',
-  fleetNote: 'Dedicated tanker fleet — 2–3 ADR-compliant trucks, ready when you need us.',
-  tagline: 'Safe Transport · Reliable Service · Energizing Tomorrow',
+  fleetNote: 'Specialized, ADR-compliant road tanker solutions powered by certified crews and dedicated fleet operations.',
   image: '/images/celeson-energy-tanker.jpeg',
+  sectionHeadline: 'Specialist road tanker service for energy products',
+  sectionIntro: 'Tailored energy logistics — executed via our specialized tanker fleet and trained hazard-materials drivers.',
   products: [
     'Crude & refined petroleum',
     'Natural gas / LPG (where licensed)',
@@ -21,18 +22,43 @@ export const energyTransport = {
   steps: [
     {
       num: '1',
-      title: 'Tell us your load',
-      desc: 'Product type, volume, pickup & delivery points',
+      title: 'Request a Cargo Assessment',
+      desc: 'Define product specs, hazardous classification (UN Class), volume, and routing requirements.',
     },
     {
       num: '2',
-      title: 'We dispatch a specialist tanker',
-      desc: 'From our dedicated 2–3 truck fleet — ADR-trained drivers',
+      title: 'Precision Fleet Deployment',
+      desc: 'Dispatched via specialized hazard-certified tankers and highly trained, professional drivers.',
     },
     {
       num: '3',
-      title: 'Safe, compliant delivery',
-      desc: 'Tracked journey, documented handover, 24/7 ops support',
+      title: 'Monitored Handover & Execution',
+      desc: 'Real-time IVMS telemetry tracking, certified Proof of Delivery (PoD), and 24/7 Control Room oversight.',
+    },
+  ],
+  standards: [
+    { code: 'ADR', label: 'Dangerous Goods by Road' },
+    { code: 'SQAS', label: 'Safety & Quality Assessment for Sustainability' },
+    { code: 'ISO 39001', label: 'Road Traffic Safety Management' },
+    { code: 'ISO 45001', label: 'Occupational Health & Safety' },
+    { code: 'IVMS', label: 'In-Vehicle Monitoring Systems' },
+  ],
+  protocols: [
+    {
+      title: 'Journey Management Plans (JMP)',
+      desc: 'Route risk assessment, approved routing, rest scheduling, and night-driving controls on every hazardous consignment.',
+    },
+    {
+      title: 'Emergency Response Plans (ERP)',
+      desc: 'Product-specific spill, fire, and containment procedures with 24/7 Control Room escalation.',
+    },
+    {
+      title: 'Pre-Trip Inspection (PTI) Routines',
+      desc: 'Documented vehicle, tank, and equipment checks completed and signed off before every dispatch.',
+    },
+    {
+      title: 'Driver Competency Framework',
+      desc: 'ADR certification, defensive driving, hazard-materials handling, and continuous competency assessment.',
     },
   ],
   trustBadges: [
@@ -43,10 +69,10 @@ export const energyTransport = {
     { title: 'Sustainability', subtitle: 'Our Responsibility' },
   ],
   trustBullets: [
-    'ADR Compliant',
-    'Highly Trained Drivers',
-    'Well Maintained Fleet',
-    '24/7 Operations Support',
+    'ADR-Compliant Equipment & Documentation',
+    'Certified Hazard-Materials Drivers',
+    'IVMS-Monitored Fleet',
+    '24/7 Control Room Support',
   ],
 };
 
@@ -108,12 +134,12 @@ export const valuePillars = [
 ];
 
 export const whoWeAre =
-  'Celeson Group is a diversified organisation founded by Arundhan Alphones — providing transport safety, supply chain consulting, facility management, industrial services, and hospitality (including Kori Café in Mumbai). We combine 33+ years of field leadership with international best practice.';
+  'Celeson Group is a specialized logistics, transport safety, and supply chain solutions provider, leveraging over 33 years of international operational leadership across India and the GCC. We deliver end-to-end bulk liquid transport, road safety governance, and industrial logistics management designed to meet strict multinational HSE and regulatory standards.';
 
 export const businessVerticals = [
   {
-    title: 'Transport Safety & IVMS',
-    desc: 'Fleet audits, journey management, driver competency, control rooms, and Goal Zero safety culture.',
+    title: 'Fleet Safety & Risk Engineering',
+    desc: 'ISO 39001 / ISO 45001 auditing, automated Journey Management Systems (JMS), and Goal Zero safety governance.',
     regions: 'India & UAE',
   },
   {
@@ -122,14 +148,9 @@ export const businessVerticals = [
     regions: 'India & UAE',
   },
   {
-    title: 'Industrial & Facility Services',
-    desc: 'Steel plant logistics, contractor compliance, labour camps, and facility management.',
-    regions: 'Primarily India · UAE',
-  },
-  {
-    title: 'Hospitality — Kori Café',
-    desc: 'Family-run café and corporate catering in Bandra West, with HACCP-aligned kitchen operations.',
-    regions: 'India',
+    title: 'In-Plant Logistics & Heavy Industry Operations',
+    desc: 'End-to-end material handling, plant traffic management, and contractor safety compliance.',
+    regions: 'India & UAE',
   },
 ];
 

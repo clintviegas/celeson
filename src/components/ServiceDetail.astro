@@ -67,22 +67,6 @@ const base = `/${region}`;
           </ul>
         )}
 
-        {serviceId === 'hospitality' && region === 'india' && (
-          <div class="mt-10 rounded-2xl border border-orange-200 bg-orange-50 p-6">
-            <h2 class="text-lg font-bold text-slate-900 mb-2">Kori Café — Our Flagship</h2>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4">
-              Visit our Bandra West café or read how Celeson brings HACCP-aligned hospitality operations to life.
-            </p>
-            <div class="flex flex-wrap gap-3">
-              <a href={`${base}/insights/kori-cafe-hospitality-india`} class="inline-flex rounded-full bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-500 transition-colors">
-                Read the Kori story
-              </a>
-              <a href="https://kori.cafe/" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full border border-orange-300 px-5 py-2.5 text-sm font-semibold text-orange-800 hover:bg-orange-100 transition-colors">
-                Visit kori.cafe
-              </a>
-            </div>
-          </div>
-        )}
       </div>
 
       <div>
@@ -94,10 +78,17 @@ const base = `/${region}`;
             <ul class="space-y-4">
               {related.map(cs => (
                 <li>
-                  <a href={`${base}/insights/${cs.slug}`} class="block group">
-                    <p class="text-[10px] font-bold uppercase tracking-wider text-teal-600 mb-1">{cs.client}</p>
-                    <p class="text-sm font-bold text-slate-900 group-hover:text-teal-700 leading-snug">{cs.title}</p>
-                  </a>
+                  {cs.slug ? (
+                    <a href={`${base}/insights/${cs.slug}`} class="block group">
+                      <p class="text-[10px] font-bold uppercase tracking-wider text-teal-600 mb-1">{cs.client}</p>
+                      <p class="text-sm font-bold text-slate-900 group-hover:text-teal-700 leading-snug">{cs.title}</p>
+                    </a>
+                  ) : (
+                    <div class="block">
+                      <p class="text-[10px] font-bold uppercase tracking-wider text-teal-600 mb-1">{cs.client}</p>
+                      <p class="text-sm font-bold text-slate-900 leading-snug">{cs.title}</p>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

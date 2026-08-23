@@ -739,70 +739,6 @@ export const insights: InsightArticle[] = [
     ],
   },
   {
-    slug: 'kori-cafe-hospitality-india',
-    title: 'Kori Café — A Family Legacy Brewed Into Every Cup',
-    description:
-      'Celeson Group\'s hospitality flagship in Bandra West — built on 25+ years of family bakery heritage, Coorg coffee roots, wellness-focused F&B, and the same operational discipline that drives Celeson\'s safety and logistics work.',
-    category: 'Case Study',
-    region: 'india',
-    serviceIds: ['hospitality'],
-    date: '2025-04-15',
-    readTime: '9 min read',
-    image: '/images/kori-cafe-exterior.png',
-    keywords: ['Kori Café', 'hospitality India', 'HACCP', 'Bandra café', 'corporate catering', 'Celeson Group', 'Made in India coffee equipment', 'wellness café Mumbai'],
-    content: [
-      {
-        paragraphs: [
-          'Kori Café is the hospitality flagship of Celeson Group — a forest-green storefront on Bandra West\'s 30th Road, blending homestyle bakery traditions with Coorg coffee heritage. Wellness, craft, and community come together under one roof.',
-          'Visit Kori at kori.cafe — open Wednesday to Monday, 7:30am to 10:30pm, just off Linking Road in Bandra West.',
-        ],
-      },
-      {
-        heading: 'The Family Behind the Brand',
-        paragraphs: [
-          'Celeson Group is a family-inspired brand built on care, innovation, and quality. The founding family brings together expertise in supply chain, investment banking, marketing, and over two decades of authentic food traditions. That combination — operational rigour meets family warmth — is what makes Kori different from a typical café.',
-          'The vision: to build a trusted ecosystem of innovative ventures that celebrate Indian craftsmanship, deliver world-class experiences, and create meaningful social impact.',
-        ],
-      },
-      {
-        heading: 'Why Operational Excellence Belongs in Hospitality',
-        paragraphs: [
-          'Restaurant operations demand the same rigour as warehouse HSE: standard operating procedures, supplier controls, temperature monitoring, staff competency, and customer safety. Celeson applies HACCP principles to Kori\'s kitchen — food safety programmes, storage controls, and supplier verification aligned with hospitality best practice.',
-          'The same discipline that underpins Celeson\'s safety and logistics work runs behind the counter at Kori. That\'s not coincidence — it\'s design.',
-        ],
-      },
-      {
-        heading: 'What We Solve',
-        paragraphs: [
-          'The Indian food and beverage market is fragmented and lacks trusted integrated brands. Cafés and restaurants often lack authentic, health-driven offerings. India depends on costly imported coffee machines and equipment. Hospitality and logistics face major skill and professionalism gaps. And stress and anxiety are at all-time highs — especially among youth and professionals who need a genuine place to pause.',
-          'Kori was built to answer all of these.',
-        ],
-      },
-      {
-        heading: 'Our Solutions',
-        paragraphs: [
-          'Kori introduces authentic, wellness-focused food and beverage offerings — ready-to-drink beverages with functional ingredients alongside an all-day menu. Coffee is sourced from Coorg estates, handpicked for bold aroma and smooth flavour.',
-          'Signature offerings include Berry Almond, Vietnamese Cold Brew, Spanish Latte, Iced Matcha, Strawberry Matcha, Cajun Spiced Chicken Schnitzel, and the Fiery Chicken Burger.',
-          'Beyond the cup, Celeson Group is working to design and manufacture cost-effective, Made-in-India coffee equipment — reducing India\'s dependence on costly imported machines. Training academies are planned to bridge the skill and professionalism gaps that hold the hospitality industry back.',
-        ],
-      },
-      {
-        heading: 'Kori Café Today',
-        paragraphs: [
-          'Located at Shop No. 1, Hari Niwas Co-operative Housing Society, 30th Road, Off SV Road, Bandra West, Mumbai 400050 — Kori is open six days a week for breakfast through dinner. The atmosphere is designed for everyday pauses: solo coffee breaks, catch-ups between meetings, or quiet time with a book. Warm lighting, soft music, and no reason to hurry.',
-          'Order via Swiggy and Zomato with Kori @ Your Crib — tap, order, enjoy.',
-        ],
-      },
-      {
-        heading: 'Broader Hospitality Division',
-        paragraphs: [
-          'Beyond Kori, Celeson\'s Hospitality Division delivers restaurant operations, corporate catering, cloud kitchen management, food safety programmes, and hospitality consulting. Whether you are planning an employee cafeteria programme, event catering, or evaluating F&B partners for compliance — Celeson brings operational leadership with a family soul.',
-          'For corporate catering and hospitality consulting enquiries, contact Celeson India at +91 90762 17999 or info@celesongroup.com.',
-        ],
-      },
-    ],
-  },
-  {
     slug: 'celeson-energy-transport-specialist-hydrocarbon-fleet',
     title: 'Celeson Energy Transport: Specialist Hydrocarbon & Petroleum Tanker Operations in India and the GCC',
     description:
@@ -827,7 +763,7 @@ export const insights: InsightArticle[] = [
       {
         paragraphs: [
           'Moving hydrocarbons, refined petroleum, gas, and petrochemical products by road demands more than a vehicle and a driver. It requires licensed capability, disciplined journey management, documented handover, and operators who understand that a single deviation can affect people, assets, and the environment.',
-          'Celeson Energy Transport is Celeson Group\'s specialist road tanker division — built on 33+ years of leadership in transport safety and energy-sector logistics across India and the GCC. With a dedicated fleet of 2–3 ADR-compliant tankers and highly trained drivers, we provide on-call specialist transport for multinational energy companies, refineries, terminals, and industrial customers who need reliability without compromising compliance.',
+          'Celeson Energy Transport is Celeson Group\'s specialist road tanker division — built on 33+ years of leadership in transport safety and energy-sector logistics across India and the GCC. With a dedicated fleet of ADR-compliant tankers and certified hazard-materials drivers, we provide on-call specialist transport for multinational energy companies, refineries, terminals, and industrial customers who need reliability without compromising compliance.',
         ],
       },
       {
@@ -840,7 +776,7 @@ export const insights: InsightArticle[] = [
       {
         heading: 'A dedicated fleet, not a volume carrier',
         paragraphs: [
-          'Celeson Energy Transport is intentionally structured as a specialist partner — not a mass fleet operator. Our dedicated 2–3 tanker model allows focused maintenance, consistent driver assignment, and direct accountability on every journey.',
+          'Celeson Energy Transport is intentionally structured as a specialist partner — not a mass fleet operator. Our dedicated tanker model allows focused maintenance, consistent driver assignment, and direct accountability on every journey.',
           'For clients, that means faster mobilisation, clearer communication, and a team that knows your routes, your documentation standards, and your escalation paths. It is the difference between hiring a truck and engaging a transport partner.',
         ],
       },

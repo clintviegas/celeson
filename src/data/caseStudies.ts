@@ -16,7 +16,7 @@ export const caseStudies: CaseStudy[] = [
     client: 'Celeson Energy Transport',
     region: 'uae',
     summary: 'On-call specialist tanker operations for hydrocarbons, petroleum, and petrochemical products — ADR-compliant fleet, trained drivers, and documented handover across the UAE and GCC.',
-    outcomes: ['Dedicated 2–3 tanker fleet operational', 'ADR-trained driver pool', '24/7 dispatch & journey support', 'Compliant product-handling documentation'],
+    outcomes: ['Dedicated specialist tanker fleet operational', 'ADR-certified driver pool', '24/7 dispatch & journey management support', 'Compliant product-handling documentation'],
     serviceIds: ['energy-transport'],
   },
   {
@@ -79,7 +79,7 @@ export const caseStudies: CaseStudy[] = [
     client: 'Celeson Energy Transport',
     region: 'india',
     summary: 'On-call specialist tanker operations for hydrocarbons, petroleum, and petrochemical products — ADR-compliant fleet, trained drivers, and documented handover across India.',
-    outcomes: ['Dedicated 2–3 tanker fleet operational', 'ADR-trained driver pool', '24/7 dispatch & journey support', 'Compliant product-handling documentation'],
+    outcomes: ['Dedicated specialist tanker fleet operational', 'ADR-certified driver pool', '24/7 dispatch & journey management support', 'Compliant product-handling documentation'],
     serviceIds: ['energy-transport'],
   },
   {
@@ -153,15 +153,6 @@ export const caseStudies: CaseStudy[] = [
     summary: 'Warehouse HSE compliance, loading bay traffic management, DG storage reviews, and permit-to-work systems for large-scale distribution facilities.',
     outcomes: ['Loading bay safety standardised', 'DG storage compliance verified', 'Contractor induction programme'],
     serviceIds: ['warehousing'],
-  },
-  {
-    slug: 'kori-cafe-hospitality-india',
-    title: 'Kori Café — Hospitality Division, Bandra West',
-    client: 'Celeson Group / Kori Café',
-    region: 'india',
-    summary: 'Family-run café extending Celeson\'s operational discipline into F&B — HACCP-aligned kitchen operations, corporate catering capability, and community-facing hospitality in Bandra.',
-    outcomes: ['HACCP food safety framework', 'All-day café operations 7:30am–10:30pm', 'Corporate catering pipeline', 'Brand presence on Swiggy & Zomato'],
-    serviceIds: ['hospitality'],
   },
 ];
 

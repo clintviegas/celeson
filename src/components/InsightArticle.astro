@@ -11,7 +11,6 @@ interface Props {
 const { article, region, related } = Astro.props;
 const base = `/${region}`;
 const imageClass =
-  article.slug === 'kori-cafe-hospitality-india' ? 'object-cover object-center' :
   article.slug === 'arun-dubai-chamber-speaker.png' || article.slug === 'arundhan-alphones-dubai-chamber-road-safety-speaker' ? 'object-cover object-top' :
   article.slug === 'rospa-gold-award-safety-excellence' ? 'object-cover object-top' :
   'object-cover';
@@ -84,18 +83,6 @@ const quoteSlugs = ['arundhan-alphones-dubai-chamber-road-safety-speaker', 'rosp
         </div>
       ))}
     </div>
-
-    {article.slug === 'kori-cafe-hospitality-india' && (
-      <div class="rounded-2xl border border-orange-200 bg-orange-50 p-6 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <p class="text-sm font-bold text-orange-900">Visit Kori Café</p>
-          <p class="text-sm text-orange-800/80">Bandra West, Mumbai — open Wed–Mon, 7:30am–10:30pm</p>
-        </div>
-        <a href="https://kori.cafe/" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-500 transition-colors flex-shrink-0">
-          kori.cafe →
-        </a>
-      </div>
-    )}
 
     <div class="mt-12 pt-8 border-t border-slate-200">
       <p class="text-sm font-semibold text-slate-900 mb-4">Need help implementing this in your operations?</p>

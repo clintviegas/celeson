@@ -64,9 +64,9 @@ export const businessVerticals = [
     items: ['Sports Events', 'Endurance Programs', 'Marathon Participation', 'Swimming Programs', 'Corporate Wellness Programs'],
   },
   {
-    title: 'Hospitality Division',
-    desc: 'Kori Café and restaurant & catering solutions with food safety and HACCP compliance.',
-    items: ['Kori Café', 'Restaurant Operations', 'Corporate Catering', 'Cloud Kitchen Management', 'HACCP Compliance'],
+    title: 'Hospitality & Food Services',
+    desc: 'Restaurant & catering solutions with food safety and HACCP compliance.',
+    items: ['Restaurant Operations', 'Corporate Catering', 'Cloud Kitchen Management', 'Food Safety Programs', 'HACCP Compliance'],
   },
   {
     title: 'Technology & Intelligence',
